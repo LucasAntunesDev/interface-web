@@ -34,6 +34,7 @@ body {
 #hamburger:hover{
     scale: 1.1;
     cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 #logo {
@@ -148,6 +149,7 @@ hr {
 .product-title{
     background: #5b21b6;
     padding-inline: 4rem;
+    text-transform: uppercase;
 }
 
 .card-main {
