@@ -26,6 +26,16 @@ body {
     padding-inline: 10rem;
 }
 
+#logo:hover{
+    scale: 1.1;
+    cursor: pointer;
+}
+
+#hamburger:hover{
+    scale: 1.1;
+    cursor: pointer;
+}
+
 #logo {
     height: 3.5rem;
     filter: invert();
