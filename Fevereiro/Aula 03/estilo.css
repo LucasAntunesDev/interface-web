@@ -7,7 +7,7 @@
     --vermelho500: #ef4444;
     --vermelho600: #dc2626;
     --vermelho800: #991b1b;
-    --laranja400:#fb923c;
+    --laranja400: #fb923c;
 }
 
 * {
@@ -72,9 +72,10 @@ body {
 }
 
 #title {
-    color: var(--vermelho500);
+    color: var(--vermelho800);
+    font-weight: bold;
     text-align: center;
-    margin-block: 2rem;
+    margin-top: 2rem;
     font-size: 3rem;
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
 }
@@ -133,11 +134,21 @@ body {
 }
 
 hr {
-    border: solid 1px var(--laranja400);
+    /* border: solid 1px var(--vermelho500);
+    width: 85%;
+    margin: 0 auto; */
+    height: 8px;
+    background-color: var(--vermelho800);
+    background-image: linear-gradient(90deg, transparent, var(--vermelho500), transparent);
+    width: 80%;
+    margin: 0 auto;
+    border: 0;
+    height: 1px;
 }
 
 .price {
     text-align: right;
+    color: var(--laranja400);
     margin-right: 1rem;
     padding-block: 0.5rem;
 }
@@ -174,22 +185,22 @@ hr {
     background-size: cover;
 }
 
-.bg-img-1{
+.bg-img-1 {
     background: url(https://cdn.britannica.com/31/122031-050-F8FCA663/Hamburger-cheeseburger.jpg);
     background-size: cover;
 }
 
-.bg-img-2{
+.bg-img-2 {
     background: url(https://www.gardengourmet.co.uk/sites/default/files/recipes/aeead5804e79ff6fb98b2039619c5230_200828_MEDIAMONKS_GG_Spicytarian.jpg);
     background-size: cover;
 }
 
-.bg-img-3{
+.bg-img-3 {
     background: url(https://www.sabornamesa.com.br/media/k2/items/cache/acbf17dca076404b2078b0d4b135530d_XL.jpg);
     background-size: cover;
 }
 
-.bg-img-4{
+.bg-img-4 {
     background: url(https://www.df.senac.br/wp-content/uploads/2021/01/hambuuguer-gourmet1.jpeg);
     background-size: cover;
 }
