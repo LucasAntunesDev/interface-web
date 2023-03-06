@@ -3,6 +3,11 @@
     --roxo800: #5b21b6;
     --roxo500: #8b5cf6;
     --neutral900: #171717;
+    --amarelo100: #fef3c7;
+    --vermelho500: #ef4444;
+    --vermelho600: #dc2626;
+    --vermelho800: #991b1b;
+    --laranja400:#fb923c;
 }
 
 * {
@@ -12,12 +17,14 @@
 }
 
 body {
-    background: var(--neutral900);
-    font-family: 'Gloock', serif;
+    /* background: var(--neutral900); */
+    background: var(--amarelo100);
+    /* font-family: 'Gloock', serif; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #header {
-    background: var(--roxo600);
+    background: var(--vermelho600);
     height: 4.5rem;
     display: flex;
     flex-direction: row;
@@ -26,12 +33,12 @@ body {
     padding-inline: 10rem;
 }
 
-#logo:hover{
+#logo:hover {
     scale: 1.1;
     cursor: pointer;
 }
 
-#hamburger:hover{
+#hamburger:hover {
     scale: 1.1;
     cursor: pointer;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -47,7 +54,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: var(--roxo500);
+    background: var(--vermelho500);
     border-radius: 100%;
     width: 6.5rem;
     height: 3.5rem;
@@ -65,7 +72,7 @@ body {
 }
 
 #title {
-    color: var(--roxo500);
+    color: var(--vermelho500);
     text-align: center;
     margin-block: 2rem;
     font-size: 3rem;
@@ -73,7 +80,7 @@ body {
 }
 
 #subtitle {
-    color: var(--roxo500);
+    color: var(--vermelho500);
     text-align: center;
     margin-block: 3rem;
     font-size: 1.5rem;
@@ -92,17 +99,19 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     width: auto;
     flex-wrap: wrap;
     gap: 2rem;
 }
 
 .cardapio-item {
-    background: #27272a;
+    /* background: #27272a; */
+    background: var(--vermelho800);
+    color: var(--amarelo100);
     max-width: 16rem;
     border-radius: 0.75rem;
-    color: var(--roxo500);
+    color: var(--vermelho500);
     padding-block: 0.5rem;
     box-shadow: 0 10px 15px -3px rgb(151, 0, 76, 0.1), 0 4px 6px -4px rgba(151, 0, 76, 0.1);
     cursor: pointer;
@@ -116,12 +125,15 @@ body {
 
 .text-card {
     font-size: small;
+    font-weight: 400;
     font-weight: 300;
     padding: 1rem;
+    /* color: var(--amarelo100); */
+    color: var(--amarelo100);
 }
 
 hr {
-    border: solid 1px #3f3f46;
+    border: solid 1px var(--laranja400);
 }
 
 .price {
@@ -134,6 +146,23 @@ hr {
     width: 8rem;
 }
 
+/* .product-name:nth-child(1) {
+    background: url(https://cdn.britannica.com/31/122031-050-F8FCA663/Hamburger-cheeseburger.jpg);
+}
+
+.product-name:nth-child(2) {
+    background: url(https://cdn.britannica.com/31/122031-050-F8FCA663/Hamburger-cheeseburger.jpg);
+}
+
+.product-name:nth-child(3) {
+    background: url(https://www.sabornamesa.com.br/media/k2/items/cache/acbf17dca076404b2078b0d4b135530d_XL.jpg);
+    background-size: cover;
+}
+
+.product-name:nth-child(4) {
+    background: url(https://cdn.britannica.com/31/122031-050-F8FCA663/Hamburger-cheeseburger.jpg);
+} */
+
 .product-name {
     display: flex;
     flex-direction: column-reverse;
@@ -142,13 +171,36 @@ hr {
     font-size: larger;
     color: white;
     height: 10rem;
+    background-size: cover;
+}
+
+.bg-img-1{
     background: url(https://cdn.britannica.com/31/122031-050-F8FCA663/Hamburger-cheeseburger.jpg);
     background-size: cover;
 }
 
-.product-title{
-    background: #5b21b6;
+.bg-img-2{
+    background: url(https://thumbs.dreamstime.com/b/hamburguer-com-pimenta-da-malagueta-picante-no-fundo-branco-isolado-144302610.jpg);
+    background-size: contain;
+}
+
+.bg-img-3{
+    background: url(https://www.sabornamesa.com.br/media/k2/items/cache/acbf17dca076404b2078b0d4b135530d_XL.jpg);
+    background-size: cover;
+}
+
+.bg-img-4{
+    background: url(https://www.df.senac.br/wp-content/uploads/2021/01/hambuuguer-gourmet1.jpeg);
+    background-size: cover;
+}
+
+.product-title {
+    /* background: var(--vermelho800); */
+    color: var(--amarelo100);
+    text-shadow: 3px 2px 2px var(--vermelho800);
+    /* box-shadow: 0 4px 6px -1px rgba(253, 0, 0, 0.836), 0 2px 4px -2px rgba(255, 0, 0, 0.1); */
     padding-inline: 4rem;
+    font-weight: bold;
     text-transform: uppercase;
 }
 
