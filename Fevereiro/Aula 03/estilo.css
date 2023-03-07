@@ -1,216 +1,243 @@
-  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-  :root {
-      --roxo600: #7c3aed;
-      --roxo800: #5b21b6;
-      --roxo500: #8b5cf6;
-      --neutral900: #171717;
-      --amarelo100: #fef3c7;
-      --vermelho500: #ef4444;
-      --vermelho600: #dc2626;
-      --vermelho700: #b91c1c;
-      --vermelho800: #991b1b;
-      --vermelho900: #7f1d1d;
-      --laranja400: #fb923c;
-  }
+:root {
+    --roxo600: #7c3aed;
+    --roxo800: #5b21b6;
+    --roxo500: #8b5cf6;
+    --neutral900: #171717;
+    --amarelo100: #fef3c7;
+    --vermelho500: #ef4444;
+    --vermelho600: #dc2626;
+    --vermelho700: #b91c1c;
+    --vermelho800: #991b1b;
+    --vermelho900: #7f1d1d;
+    --laranja400: #fb923c;
+}
 
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  body {
-      background: var(--amarelo100);
-      font-family: 'Raleway', sans-serif;
-  }
+body {
+    background: var(--amarelo100);
+    font-family: 'Raleway', sans-serif;
+}
 
-  #header {
-      background: var(--vermelho600);
-      height: 4.5rem;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding-inline: 10rem;
-      border-bottom: solid 3px var(--laranja400);
-      box-shadow: 0 10px 15px -3px rgb(255 0 0 / 25%), 0 4px 6px -4px rgb(255 0 0 / 22%);
-  }
+#header {
+    background: var(--vermelho600);
+    height: 4.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 7.5rem;
+    border-bottom: solid 3px var(--laranja400);
+    box-shadow: 0 10px 15px -3px rgb(255 0 0 / 25%), 0 4px 6px -4px rgb(255 0 0 / 22%);
+}
 
-  #logo:hover {
-      scale: 1.1;
-      cursor: pointer;
-      transition: all 0.5s;
-  }
+#logo:hover {
+    scale: 1.1;
+    cursor: pointer;
+    transition: all 0.5s;
+}
 
-  #hamburger:hover {
-      scale: 1.1;
-      cursor: pointer;
-      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-      transition: all 0.5s;
-  }
+#hamburger:hover {
+    scale: 1.1;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transition: all 0.5s;
+}
 
-  #logo {
-      height: 3.5rem;
-      filter: invert();
-      transition: all 0.5s;
-  }
+#logo {
+    height: 3.5rem;
+    filter: invert();
+    transition: all 0.5s;
+}
 
-  #rounded-div {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      background: var(--vermelho500);
-      border-radius: 100%;
-      width: 6.5rem;
-      height: 3.5rem;
-      gap: 2rem;
-      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-      transition: all 0.5s;
-  }
+#rounded-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: var(--vermelho500);
+    border-radius: 100%;
+    width: 6.5rem;
+    height: 3.5rem;
+    gap: 2rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transition: all 0.5s;
+}
 
-  #rounded-div:hover {
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.336), 0 2px 4px -2px rgba(0, 0, 0, 0.322);
-      cursor: pointer;
-      transition: all 0.5s;
-  }
+#rounded-div:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.336), 0 2px 4px -2px rgba(0, 0, 0, 0.322);
+    cursor: pointer;
+    transition: all 0.5s;
+}
 
-  .icons-white {
-      color: white;
-  }
+.icons-white {
+    color: white;
+}
 
-  #title {
-      color: var(--vermelho800);
-      font-weight: bold;
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 3rem;
-      filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-  }
+#title {
+    color: var(--vermelho800);
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 3rem;
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    
+}
 
-  #subtitle {
-      color: var(--vermelho500);
-      text-align: center;
-      margin-block: 3rem;
-      font-size: 1.5rem;
-      margin-top: 0;
-      filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-  }
+#subtitle {
+    color: var(--vermelho500);
+    text-align: center;
+    margin-block: 3rem;
+    font-size: 1.5rem;
+    margin-top: 0;
+    font-weight: 500; 
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
 
-  #titles {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  }
+#titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-  #cardapio {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      width: auto;
-      flex-wrap: wrap;
-      gap: 2rem;
-  }
+#cardapio {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
 
-  .cardapio-item {
-      background: var(--vermelho800);
-      /* background-image: linear-gradient(to right,var(--vermelho500),var(--vermelho800)); */
-      color: var(--amarelo100);
-      max-width: 16rem;
-      border-radius: 0.75rem;
-      color: var(--vermelho500);
-      padding-block: 0.5rem;
-      box-shadow: 0 10px 15px -3px rgb(151, 0, 76, 0.1), 0 4px 6px -4px rgba(151, 0, 76, 0.1);
-      cursor: pointer;
-      margin-bottom: 4rem;
-      transition: all 0.5s;
-    }
+.cardapio-item {
+    background: var(--vermelho800);
+    color: var(--amarelo100);
+    max-width: 16rem;
+    border-radius: 0.75rem;
+    color: var(--vermelho500);
+    padding-block: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgb(151, 0, 76, 0.1), 0 4px 6px -4px rgba(151, 0, 76, 0.1);
+    cursor: pointer;
+    margin-bottom: 4rem;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
 
-  .cardapio-item:hover {
-      /* background-image: linear-gradient(to right,var(--vermelho600),var(--vermelho900)); */
-      background-image: linear-gradient(to right,var(--vermelho500),var(--vermelho800));
-      transition: all 0.5s;
-  }
+.cardapio-item:hover {
+    background-image: linear-gradient(to right, var(--vermelho500), var(--vermelho800));
+    transition: all 0.5s;
+}
 
-  .img-card {
-      padding-block: 0.5rem;
-      margin-inline: 1rem;
-  }
+.img-card {
+    padding-block: 0.5rem;
+    margin-inline: 1rem;
+}
 
-  .text-card {
-      font-size: small;
-      font-weight: 400;
-      font-weight: 300;
-      padding: 1rem;
-      /* color: var(--amarelo100); */
-      color: var(--amarelo100);
-  }
+.text-card {
+    font-size: small;
+    font-weight: 500;
+    padding-block: 4px;
+    margin-block: 4px;
+    padding: 1rem;
+    color: var(--amarelo100);
+}
 
-  hr {
-      height: 8px;
-      background-color: var(--vermelho800);
-      background-image: linear-gradient(90deg, transparent, var(--vermelho500), transparent);
-      width: 80%;
-      margin: 0 auto;
-      border: 0;
-      height: 1px;
-  }
+hr {
+    height: 8px;
+    background-color: var(--vermelho800);
+    background-image: linear-gradient(90deg, transparent, var(--vermelho500), transparent);
+    width: 80%;
+    margin: 0 auto;
+    border: 0;
+    height: 1px;
+}
 
-  .price {
-      text-align: right;
-      color: var(--laranja400);
-      margin-right: 1rem;
-      padding-block: 0.5rem;
-  }
+.price {
+    text-align: center;
+    /* color: var(--laranja400); */
+    color: var(--vermelho900);
+    margin-right: 1rem;
+    padding-block: 0.5rem;
+    background: var(--amarelo100);
+    width: 4.5rem;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: last baseline;
+}
 
-  .product-img {
-      width: 8rem;
-  }
+.product-img {
+    width: 8rem;
+}
 
-  .product-name {
-      display: flex;
-      flex-direction: column-reverse;
-      text-align: center;
-      margin-block: 0.5rem;
-      font-size: larger;
-      color: white;
-      height: 10rem;
-      background-size: cover;
-  }
+.product-name {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    margin-block: 0.5rem;
+    font-size: larger;
+    color: white;
+    height: 10rem;
+    background-size: cover;
+}
 
-  .bg-img-1 {
-      background: url(https://cdn.britannica.com/31/122031-050-F8FCA663/Hamburger-cheeseburger.jpg);
-      background-size: cover;
-  }
+.bg-img-1 {
+    background: url(https://cdn.britannica.com/31/122031-050-F8FCA663/Hamburger-cheeseburger.jpg);
+    background-size: cover;
+}
 
-  .bg-img-2 {
-      background: url(https://www.gardengourmet.co.uk/sites/default/files/recipes/aeead5804e79ff6fb98b2039619c5230_200828_MEDIAMONKS_GG_Spicytarian.jpg);
-      background-size: cover;
-  }
+.bg-img-2 {
+    background: url(https://www.gardengourmet.co.uk/sites/default/files/recipes/aeead5804e79ff6fb98b2039619c5230_200828_MEDIAMONKS_GG_Spicytarian.jpg);
+    background-size: cover;
+}
 
-  .bg-img-3 {
-      background: url(https://www.sabornamesa.com.br/media/k2/items/cache/acbf17dca076404b2078b0d4b135530d_XL.jpg);
-      background-size: cover;
-  }
+.bg-img-3 {
+    background: url(https://www.sabornamesa.com.br/media/k2/items/cache/acbf17dca076404b2078b0d4b135530d_XL.jpg);
+    background-size: cover;
+}
 
-  .bg-img-4 {
-      background: url(https://www.df.senac.br/wp-content/uploads/2021/01/hambuuguer-gourmet1.jpeg);
-      background-size: cover;
-  }
+.bg-img-4 {
+    background: url(https://www.df.senac.br/wp-content/uploads/2021/01/hambuuguer-gourmet1.jpeg);
+    background-size: cover;
+}
 
-  .product-title {
-      color: var(--amarelo100);
-      text-shadow: 3px 2px 2px var(--vermelho800);
-      padding-inline: 4rem;
-      font-weight: bold;
-      text-transform: uppercase;
-  }
+.product-title {
+    color: var(--amarelo100);
+    text-shadow: 3px 2px 2px var(--vermelho800);
+    padding-inline: 4rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    align-self: first baseline;
+    background-color: rgba(0,0,0,.4);
+    backdrop-filter: blur(2px);
+    max-width: 16rem;
+}
 
-  .card-main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  }
+.card-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-bottom{
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
