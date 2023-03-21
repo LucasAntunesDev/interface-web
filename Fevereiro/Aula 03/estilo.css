@@ -112,7 +112,7 @@ body {
     flex-direction: row;
     justify-content: center;
     width: auto;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     width: 50rem;
     gap: 2rem;
     margin: auto;
@@ -165,7 +165,6 @@ hr {
 
 .price {
     text-align: center;
-    /* color: var(--laranja400); */
     color: var(--vermelho900);
     margin-right: 1rem;
     padding-block: 0.5rem;
@@ -226,7 +225,7 @@ hr {
     display: flex;
     align-self: first baseline;
     background-color: rgba(0, 0, 0, .4);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(1px);
     max-width: 16rem;
 }
 

@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    list-style: none;
+}
+
+body{
+    background: rgb(24,24,24);
+    color: whitesmoke;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+#botao{
+    background: rgb(4, 117, 70);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 1.5rem;
+    transition: all .5s;
+}
+
+#botao:hover{
+    scale: 1.1;
+}
+
+#lista{
+    margin-top: 1rem;
+}
+
+#item{
+    border-radius: 1.5rem;
+    border: 0;
+    padding: 1rem;
+}
+
+li{
+    border: solid whitesmoke 1px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    max-width: 10rem;
+    width: 10rem;
+}
+
+li:hover{
+    border-left: solid 8px crimson;
+}
