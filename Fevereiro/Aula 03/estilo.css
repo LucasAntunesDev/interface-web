@@ -82,11 +82,12 @@ body {
 
 #title {
     color: var(--vermelho800);
-    font-weight: bold;
     text-align: center;
     margin-top: 2rem;
     font-size: 3rem;
+    font-weight: 900;
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    text-transform: uppercase;
 
 }
 
@@ -96,7 +97,7 @@ body {
     margin-block: 3rem;
     font-size: 1.5rem;
     margin-top: 0;
-    font-weight: 500;
+    font-weight: 600;
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
 }
 
