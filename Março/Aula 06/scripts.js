@@ -37,3 +37,39 @@ const form = document.getElementById("form");
 /*Função que é executada quando se clica no botão*/
 form.addEventListener("submit", adicionarItem);
 //Primeiro parametro = evento, segundo = função
+
+// const teste = console.log("sim")
+
+// const botaoComuns = document.getElementsByClassName('itens-comuns');
+const botaoComuns = document.getElementById('feijao');
+
+const adicionarItensComuns = (f) => {
+  // f.preventDefault();
+  const id = f.id
+  let texto = botaoComuns.value;
+  // const texto = 'Feijão';
+
+  switch(id){
+    case 'feijao':
+      texto = 'Feijão';
+      break;
+    case 'arroz':
+      texto = 'Arroz';
+      break;
+    case 'batata':
+      texto = 'Batata';
+      break;
+    case 'cenoura':
+      texto = 'Cenoura';
+      break;
+  }
+
+  const itemExiste = itens.some((i) => i.toUpperCase() === texto.toUpperCase());
+
+  texto != "" && !itemExiste ? itens.push(texto) : "";
+  atualizaLista();
+
+
+};
+
+// const form = document.getElementById("form");

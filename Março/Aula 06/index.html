@@ -1,29 +1,69 @@
 <!DOCTYPE html>
 <html lang="PT-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript</title>
     <link rel="stylesheet" href="estilo.css">
-<script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=pH4TQB5yIoRGWIe-Phc03V-AHuS-aUacUDNcwQhfawQcZ0crnsjkL4Bg9OyPpqezC0tyiTnd70gvcfkcgnlx2U5dWZj8curzluv9nj64j22DvWrE-o7zyez7aqwOQLjLOQ-bx7E2jseqD5IA4AcIYg" charset="UTF-8"></script></head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
 <body>
-    
+
     <main>
-        <h2>Lista de Compras</h2>
+        <h2 id="titulo">Lista de Compras
+            <i class="fa-solid fa-cart-shopping"></i>
+        </h2>
 
-    <form action="" method="get" id="form">
-        <label for="item">
-            Adicione um item<br>
-            <input type="text" name="item" id="item">
-        </label>
-        <br></br>
-        <input type="submit" id="botao" value="Adicionar">
-    </form>
+        <form action="" method="get" id="form">
 
-    <ul id="lista"></ul>
+            <div id="form-div">
+                <label for="item-input" class="label">
+                    Adicione um item
+                </label>
+                <input type="text" name="item" id="item-input" placeholder="Adicionar item">
+
+                <input type="submit" id="botao" value="Adicionar">
+            </div>
+
+        </form>
+
+        <ul id="lista"></ul>
+
+        <hr>
+
+        <section id="itens-comuns">
+
+            <button type="button" onclick="adicionarItensComuns(this)" class="itens-comuns" id="feijao" value="Feijão">
+                <img src="https://cdn-icons-png.flaticon.com/512/2789/2789829.png" alt="" id="feijao-icon" class="mb-1">
+                <p>Feijão</p>
+            </button>
+
+            <button type="button" onclick="adicionarItensComuns(this)" class="itens-comuns" id="arroz" value="Arroz">
+                <i class="fa-solid fa-bowl-rice fa-2xl mb-2"></i>
+                <p>Arroz</p>
+            </button>
+
+            <button type="button" onclick="adicionarItensComuns(this)" class="itens-comuns" id="batata" value="batata">
+                <img src="https://cdn-icons-png.flaticon.com/512/4416/4416758.png" alt="" id="batata-icon" class="mb-1">
+                <p>Batata</p>
+            </button>
+
+            <button type="button" onclick="adicionarItensComuns(this)" class="itens-comuns" id="cenoura"
+                value="cenoura">
+                <i class="fa-solid fa-carrot fa-2xl mb-2"></i>
+                <p>Cenoura</p>
+            </button>
+
+        </section>
+
     </main>
 
     <script src="scripts.js"></script>
 </body>
+
 </html>
