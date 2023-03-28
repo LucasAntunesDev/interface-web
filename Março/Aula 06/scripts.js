@@ -38,16 +38,11 @@ const form = document.getElementById("form");
 form.addEventListener("submit", adicionarItem);
 //Primeiro parametro = evento, segundo = função
 
-// const teste = console.log("sim")
-
-// const botaoComuns = document.getElementsByClassName('itens-comuns');
 const botaoComuns = document.getElementById('feijao');
 
 const adicionarItensComuns = (f) => {
-  // f.preventDefault();
   const id = f.id
   let texto = botaoComuns.value;
-  // const texto = 'Feijão';
 
   switch(id){
     case 'feijao':
@@ -71,5 +66,3 @@ const adicionarItensComuns = (f) => {
 
 
 };
-
-// const form = document.getElementById("form");
