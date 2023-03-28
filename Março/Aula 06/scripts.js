@@ -5,7 +5,7 @@ const adicionarItem = (e) => {
   //(no caso, enviar os dados para o servidor)
   e.preventDefault();
   //Recupera texto e input
-  const input = document.getElementById("item");
+  const input = document.getElementById("item-input");
   const texto = input.value;
   const itemExiste = itens.some((i) => i.toUpperCase() === texto.toUpperCase());
   //Não deixa adicionar se o input estiver vazio ou o item for repetido
