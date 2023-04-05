@@ -38,24 +38,24 @@ const form = document.getElementById("form");
 form.addEventListener("submit", adicionarItem);
 //Primeiro parametro = evento, segundo = função
 
-const botaoComuns = document.getElementById('feijao');
+const botaoComuns = document.getElementById("feijao");
 
 const adicionarItensComuns = (f) => {
-  const id = f.id
+  const id = f.id;
   let texto = botaoComuns.value;
 
-  switch(id){
-    case 'feijao':
-      texto = 'Feijão';
+  switch (id) {
+    case "feijao":
+      texto = "Feijão";
       break;
-    case 'arroz':
-      texto = 'Arroz';
+    case "arroz":
+      texto = "Arroz";
       break;
-    case 'batata':
-      texto = 'Batata';
+    case "batata":
+      texto = "Batata";
       break;
-    case 'cenoura':
-      texto = 'Cenoura';
+    case "cenoura":
+      texto = "Cenoura";
       break;
   }
 
@@ -63,6 +63,4 @@ const adicionarItensComuns = (f) => {
 
   texto != "" && !itemExiste ? itens.push(texto) : "";
   atualizaLista();
-
-
 };

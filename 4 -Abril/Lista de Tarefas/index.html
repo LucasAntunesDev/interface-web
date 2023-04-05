@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="estilo.css" />
+  <title>Lista de tarefas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="list-check-solid.svg" type="image/x-icon" />
+</head>
+
+<body>
+  <fieldset>
+    <legend>
+      <i class="fa-solid fa-list-check"></i>
+      Tarefas
+    </legend>
+
+    <ul id="tarefas"></ul>
+    <hr />
+
+    <form id="form">
+      <label for="tarefa">
+
+        <div id="input-camp">
+          <input type="text" name="tarefa" id="tarefa" placeholder="Ex: Ir ao mercado" />
+        </div>
+
+      </label>
+
+      <button type="submit" id="btn">
+        <div id="add-tarefa">
+          <i class="fa-solid fa-plus"></i>
+          <i>Adicionar tarefa</i>
+        </div>
+      </button>
+      <!-- <input type="submit" value="Adicionar tarefa" id="btn" /> -->
+    </form>
+  </fieldset>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
