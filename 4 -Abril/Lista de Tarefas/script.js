@@ -1,19 +1,30 @@
 let tarefas = [];
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 let concluidos = [];
-var i = 1;
+const green = "#059669";
 
 const adicionarTarefa = (t) => {
  t.preventDefault();
- const tarefa = document.getElementById("tarefa");
- const texto = tarefa.value;
+ const input = document.getElementById("input");
+ const texto = input.value;
  const tarefaExiste = tarefas.some(
   (i) => i.toUpperCase() === texto.toUpperCase()
  );
  texto != "" && !tarefaExiste ? tarefas.push(texto) : "";
+ tarefaExiste ? alert("Essa tarefa já existe!") : "";
+ if (input.value == "") {
+  input.style.borderColor = "crimson";
+  alert("Você precisa digitar algo!");
+ }
+ input.value = "";
  atualizaLista();
- tarefa.innerHTML = "";
+};
 
- i++;
+const adicionarConcluidos = (c) => {
+ //  const input = document.getElementById("input");
+ //  const texto = input.value;
+ //  texto != "" && !tarefaExiste ?
+ concluidos.push(c);
 };
 
 const atualizaLista = () => {
@@ -23,46 +34,64 @@ const atualizaLista = () => {
  tarefas.forEach((tarefa) => {
   const li = document.createElement("li");
 
+  alert('tarefa')
+  const texto = document.createElement("p");
+
   const checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
 
+//   checkboxes.forEach(function (checkbox) {
+   checkbox.addEventListener('change', function (this) {
+    texto.style.textDecoration = this.checked ? "line-through" : "none";
+    texto.style.color = this.checked ? green : "";
+
+    //    checkboxes.forEach(function(checkbox) {
+    // checkbox.addEventListener('change', function() {
+    
+    // if (this.checked) {
+    //  concluidos.push(this);
+    //  alert("item adicionado");
+    // } else {
+    //  const index = concluidos.indexOf(this);
+    //  if (index !== -1) {
+    //   concluidos.splice(index, 1);
+    //   alert("removido");
+    //  }
+    // }
+    // });
+   });
+
+   //    const concluidoExiste = tarefas.some(
+   //     (t, texto) => t.toUpperCase() === texto
+   //    );
+
+      concluidoExiste ? tarefas.push(this) : "";
+      concluidoExiste? alert("Esse concluido já existe!") : "";
+  });
+
   const remover = document.createElement("button");
   remover.setAttribute("id", "remover");
-  remover.innerHTML = `<i class="fa-solid fa-trash">Remover tarefa</i>`;
+  remover.innerHTML = `<i class='fa-solid fa-trash remover'></i>`;
   remover.addEventListener("click", () => removerTarefa(tarefa));
 
-  const p = document.createElement('p');
-  p.innerHTML = tarefa
-
-  
+  texto.innerHTML = tarefa;
+  texto.setAttribute("class", "tarefa");
 
   const alterar = document.createElement("i");
-  alterar.setAttribute('class','fa-solid fa-pen')
-  alterar.addEventListener('click', ()=>{
-    let editavel = true;
-    editavel === true ? 
-    p.setAttribute('contenteditable', 'true'):
-    p.setAttribute('contenteditable', 'false');
-    
-    editavel == false;
+  alterar.setAttribute("class", "fa-solid fa-pen editar");
 
-    alterar.addEventListener('focus', () => editavel === false )
-    
-    // p.setAttribute('contenteditable', 'true'):
-    // p.setAttribute('contenteditable', 'false');
-    // p.setAttribute('contenteditable', 'false')
-  })
+  //   alterar.addEventListener("change", function () {
+  //    texto.style.textDecoration = this.checked ? "line-through" : "none";
+  //    texto.style.color = this.checked ? green : "";
+  //   });
+  //   alterar.addEventListener("click", adicionarConcluidos());
 
-  // const elemento = `<p class="texto" id="${i}" "contenteditable="true">` + tarefa + "</p><br>";
-  // const elemento = `<p class="texto" id="${i}" "contenteditable="true">` + tarefa + "</p><br>";
-  checkbox.addEventListener("focus", () => concluirTarefa(tarefa));
-  // li.innerHTML = p;
-  li.appendChild(p);
+  li.appendChild(texto);
+  li.appendChild(checkbox);
   li.appendChild(alterar);
   li.appendChild(remover);
-  li.appendChild(checkbox);
   ul.appendChild(li);
- });
+//  });
 };
 
 const removerTarefa = (tarefa) => {
@@ -70,22 +99,14 @@ const removerTarefa = (tarefa) => {
  atualizaLista();
 };
 
-const concluirTarefa = (t) => {
- concluidos.push(t);
- console.log(concluidos);
-
- console.log(tarefas[tarefa]);
- tarefas = tarefas.slice(t);
-
- adicionarConcluidos(t);
+const concluirTarefa = (t, li) => {
+ // t.style.color = green;
+ li.class == "concluido" ? (li.class = "") : (li.class = "concluido");
+ li.setAttribute("class", "concluido");
+ //  concluidos.push(t);
 };
 
-const adicionarConcluidos = (c) => {
- const ul = document.getElementById("tarefas");
- const li = document.createElement("li");
- li.innerHTML = '<p class="concluido"><s>' + c + "<s></p><br>";
- ul.appendChild(li);
-};
+console.log(concluidos);
 
 const form = document.getElementById("form");
 

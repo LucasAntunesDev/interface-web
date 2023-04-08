@@ -1,3 +1,12 @@
+:root{
+  --verde1: #059669;
+  --verde2: #10b981;
+  --azul: #00BDF8;
+  --vermelho: crimson;
+  --cinza2: #cbd5e1;
+  --cinza3: #94a3b8;
+}
+
 * {
  margin: 0;
  padding: 0;
@@ -20,7 +29,7 @@ fieldset {
  align-items: center;
  min-height: 50vh;
  background: #0f172a;
- /* border: solid 1px rgb(56 189 248); */
+ /* border: solid 1px var(--azul); */
  border: none;
  border-radius: 1.5rem;
  box-shadow: 0 10px 15px -3px rgb(56 189 248 / 0.1),
@@ -36,7 +45,7 @@ form {
 #title {
  margin: 1rem auto;
  font-size: 3rem;
- color: rgb(56 189 248);
+ color: var(--azul);
 }
 
 #input {
@@ -67,14 +76,14 @@ form {
  /* width: 2rem; */
  /* height: 2rem; */
  padding: 0.8rem;
- background: #059669;
+ background: var(--verde1);
  color: whitesmoke;
  border: none;
  transition: all 0.5s;
 }
 
 #btn:hover {
- background: #10b981;
+ background: var(--verde2);
  transition: all 0.5s;
  cursor: pointer;
 }
@@ -92,21 +101,21 @@ li:nth-child(1) {
 }
 
 li:hover {
- color: rgb(56 189 248);
+ color: var(--azul);
 }
 
 .remover {
- background: crimson;
+ background: var(--vermelho);
 }
 
 .editar {
- background: rgb(56 189 248);
+ background: var(--azul);
 }
 
 .concluir {
-  /* background: #059669; */
-  color: #059669!important;
-  border: solid 2px #059669 !important;
+  /* background: var(--verde1); */
+  color: var(--verde1)!important;
+  border: solid 2px var(--verde1) !important;
   /* border-radius: 0.5rem !important; */
 }
 
@@ -115,15 +124,15 @@ li:hover {
 }
 
 .editar:hover{
-  color: rgb(56 189 248);
+  color: var(--azul);
 }
 
 .concluir:hover{
-  color: #059669;
+  color: var(--verde1);
 }
 
 .remover:hover{
-  color: crimson;
+  color: var(--vermelho);
 }
 
 .concluir,
@@ -163,12 +172,12 @@ hr {
 }
 
 .concluido {
- color: #059669;
+ color: var(--verde1);
  cursor: pointer;
 }
 
 input {
- accent-color: #059669;
+ accent-color: var(--verde1);
 }
 
 button {
@@ -176,3 +185,21 @@ button {
  border: none;
 }
 
+select{
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+}
+
+
+option{
+  padding: 0.4rem;
+  /* border-bottom: solid 1px gray; */
+}
+
+option:nth-child(even){
+  background: var(--cinza2);
+}
+
+otpion:hover, select:hover{
+  background: var(--cinza3);
+}

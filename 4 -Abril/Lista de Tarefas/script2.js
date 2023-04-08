@@ -1,6 +1,7 @@
 let tarefas = [];
 let concluidos = [];
 const green = "#059669";
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 const adicionarTarefa = (t) => {
  t.preventDefault();
@@ -27,19 +28,29 @@ const atualizaLista = () => {
   const remover = document.createElement("i");
   remover.setAttribute("class", "fa-solid fa-trash remover");
   remover.addEventListener("click", () => removerTarefa(input));
-
-  const p = document.createElement("p");
-  p.innerHTML = input;
-
+  
+  const label = document.createElement('label');
+  label.innerHTML = input;
+  const textoTarefa = label.innerHTML;
+  const textoTarefaLower = textoTarefa.toLowerCase()
+  checkbox.setAttribute("id", textoTarefaLower);
+  label.setAttribute('for', textoTarefaLower);
   const alterar = document.createElement("i");
   alterar.setAttribute("class", "fa-solid fa-pen editar");
   //verifica se o checkbox está marcado
   checkbox.addEventListener("change", function () {
-   p.style.textDecoration = this.checked ? "line-through" : "none";
-   p.style.color = this.checked ? green : "white";
+    label.style.textDecoration = this.checked ? "line-through" : "none";
+    label.style.color = this.checked ? green : "white";
+   if (this.checked) {
+    concluidos.push(textoTarefa);
+    alert("Tarefa adicionada. Array(" + concluidos + ")");
+    // alert(concluidos)
+   } else {
+    removerConcluido(input)
+   }
   });
 
-  li.appendChild(p);
+  li.appendChild(label);
   li.appendChild(checkbox);
   li.appendChild(alterar);
   li.appendChild(remover);
@@ -47,9 +58,29 @@ const atualizaLista = () => {
  });
 };
 
-const removerTarefa = (input) => {
- tarefas = tarefas.filter((t) => t !== input);
+const removerTarefa = (tarefa) => {
+ tarefas = tarefas.filter((t) => t !== tarefa);
+ const index = concluidos.indexOf(tarefa);
+ alert(index);
+ if (index != -1) {
+  concluidos.splice(index, 1);
+  alert("removido;", concluidos);
+ }
  atualizaLista();
+};
+
+const removerConcluido = (tarefa) => {
+ const index = concluidos.indexOf(tarefa);
+ alert(index);
+ if (index != -1) {
+  concluidos.splice(index, 1);
+  alert("removido;", concluidos);
+ }
+ atualizaLista();
+};
+
+const filtar = () => {
+ const select = document.getElementById("filtros");
 };
 
 const concluirTarefa = (t) => {

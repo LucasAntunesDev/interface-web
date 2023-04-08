@@ -36,6 +36,29 @@ Não tem acesso ao servidor, dito isso, toda inclusão, alteração e exclusão 
     </h1>
 
     <form id="form">
+
+      <select name="filtros" id="filtros">
+        <option value="-1" id="selecao-filtro">
+          <!-- <label for=""> -->
+            Filtros
+            <i class="fa-solid fa-filter"></i>
+          <!-- </label> -->
+        </option>
+
+        <option value="concluidos">
+          <label for="">
+            <i class="fa-solid fa-list-check"></i>
+            Concluídos
+          </label>
+        </option>
+
+        <option value="nao-concluidos">
+          <label for="">
+            Não Concluídos
+          </label>
+        </option>
+      </select>
+
       <input type="text" name="input" 
       id="input" placeholder="Ex: Ir ao mercado" />
 
