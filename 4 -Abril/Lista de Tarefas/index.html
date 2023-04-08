@@ -1,3 +1,18 @@
+<!-- Desenvolvimento de um FRONT-END
+
+Você deve fazer um site que represente uma lista de tarefas com HTML, CSS e JavaScript com as seguintes funcionalidades:
+- Listar as tarefas;
+- Permitir incluir novas tarefas;
+- Permitir excluir tarefas;
+- Permitir alterar tarefas;
+- Permitir marcar a tarefa como concluída;
+- Permitir filtrar somente tarefas que não estão concluídas;
+- Permitir filtrar tarefas que estão concluídas;
+- Permitir filtrar tarefas pelo nome;
+- Utilizar cor para diferenciar tarefas concluídas das não concluídas;
+
+Não tem acesso ao servidor, dito isso, toda inclusão, alteração e exclusão devem ser realizadas através do javascript no navegador do usuário; -->
+
 <!DOCTYPE html>
 <html lang="PT-br">
 
@@ -10,39 +25,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="shortcut icon" href="list-check-solid.svg" type="image/x-icon" />
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/2098/2098402.png" type="image/x-icon" />
 </head>
 
 <body>
   <fieldset>
-    <legend>
+    <h1 id="title">
       <i class="fa-solid fa-list-check"></i>
       Tarefas
-    </legend>
-
-    <ul id="tarefas"></ul>
-    <hr />
+    </h1>
 
     <form id="form">
-      <label for="tarefa">
-
-        <div id="input-camp">
-          <input type="text" name="tarefa" id="tarefa" placeholder="Ex: Ir ao mercado" />
-        </div>
-
-      </label>
+      <input type="text" name="input" 
+      id="input" placeholder="Ex: Ir ao mercado" />
 
       <button type="submit" id="btn">
-        <div id="add-tarefa">
+        <!-- <div id="add-tarefa"> -->
           <i class="fa-solid fa-plus"></i>
-          <i>Adicionar tarefa</i>
-        </div>
+          <!-- <i>Adicionar tarefa</i> -->
+        <!-- </div> -->
       </button>
       <!-- <input type="submit" value="Adicionar tarefa" id="btn" /> -->
     </form>
+
+    <!-- <hr /> -->
+    <ul id="tarefas"></ul>
   </fieldset>
 
-  <script src="script.js"></script>
+  <script src="script2.js"></script>
 </body>
 
 </html>

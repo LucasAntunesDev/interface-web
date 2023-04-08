@@ -29,17 +29,17 @@ fieldset {
 
 form {
  display: flex;
- flex-direction: column;
+ flex-direction: row;
  gap: 1rem;
 }
 
-legend {
- margin: 0 auto;
+#title {
+ margin: 1rem auto;
  font-size: 3rem;
  color: rgb(56 189 248);
 }
 
-#tarefa {
+#input {
  padding: 0.4rem;
  background: none;
  border: none;
@@ -48,17 +48,24 @@ legend {
  color: whitesmoke;
 }
 
-#tarefa::placeholder {
+#input::placeholder {
  font-style: italic;
  color: #64748b;
 }
 
-#tarefa:focus{
-  outline: none;
+#input:autofill,
+#input:-webkit-autofill {
+ background: none;
+}
+
+#input:focus {
+ outline: none;
 }
 
 #btn {
- border-radius: 2rem;
+ border-radius: 100rem;
+ /* width: 2rem; */
+ /* height: 2rem; */
  padding: 0.8rem;
  background: #059669;
  color: whitesmoke;
@@ -88,15 +95,53 @@ li:hover {
  color: rgb(56 189 248);
 }
 
-#remover {
- border-radius: 2rem;
- padding: 0.4rem;
+.remover {
  background: crimson;
+}
+
+.editar {
+ background: rgb(56 189 248);
+}
+
+.concluir {
+  /* background: #059669; */
+  color: #059669!important;
+  border: solid 2px #059669 !important;
+  /* border-radius: 0.5rem !important; */
+}
+
+.editar:hover, .concluir:hover, .remover:hover{
+  background: white;
+}
+
+.editar:hover{
+  color: rgb(56 189 248);
+}
+
+.concluir:hover{
+  color: #059669;
+}
+
+.remover:hover{
+  color: crimson;
+}
+
+.concluir,
+.editar,
+.remover {
+ border-radius: 0.5rem;
  color: whitesmoke;
  border: none;
  transition: all 0.5s;
  cursor: pointer;
  font-weight: bolder;
+ padding: 0.4rem;
+}
+
+#remover,
+.fa-solid,
+.fa-trash {
+ text-transform: capitalize;
 }
 
 #input-camp {
@@ -125,3 +170,9 @@ hr {
 input {
  accent-color: #059669;
 }
+
+button {
+ background: none;
+ border: none;
+}
+
