@@ -190,6 +190,7 @@ hr {
 .concluido {
  color: var(--verde1);
  cursor: pointer;
+ text-decoration: line-through;
 }
 
 input {
