@@ -57,7 +57,8 @@ const atualizaLista = () => {
         label.setAttribute("class", "concluido");
       }
       if (this.checked) {
-        concluidos.push(li);
+        // concluidos.push(li);
+        concluidos.push(checkbox);
         // alert("Tarefa adicionada. Array(" + concluidos + ")");
       } else {
         removerConcluido(input);
@@ -69,18 +70,6 @@ const atualizaLista = () => {
       //   checkboxesConcluidas[input.toLowerCase()] = checkbox.checked = false;
       // }
 
-      concluidos.forEach((checkbox) => {
-        //a variavel checkbox tem toda a li dentro dela
-        console.log(checkbox)
-        // const elemento = document.getElementById(checkbox);
-        // const id = elemento.id;
-        // if (id == checkbox) {
-        //   // checkbox.setAttribute('class', 'concluido')
-        //   checkbox.checked = true;
-        //   alert('sim')
-        // }
-
-      });
     });
 
     alterar.addEventListener("click", (label) => {
@@ -89,6 +78,19 @@ const atualizaLista = () => {
     });
   });
 };
+
+concluidos.forEach((checkbox) => {
+  //a variavel checkbox tem toda a li dentro dela
+  console.log(checkbox)
+  // const elemento = document.getElementById(checkbox);
+  // const id = elemento.id;
+  // if (id == checkbox) {
+  //   // checkbox.setAttribute('class', 'concluido')
+  //   checkbox.checked = true;
+  //   alert('sim')
+  // }
+
+});
 
 const removerTarefa = (tarefa) => {
   tarefas = tarefas.filter((t) => t !== tarefa);
