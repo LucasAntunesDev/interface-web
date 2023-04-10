@@ -1,10 +1,11 @@
-:root{
-  --verde1: #059669;
-  --verde2: #10b981;
-  --azul: #00BDF8;
-  --vermelho: crimson;
-  --cinza2: #cbd5e1;
-  --cinza3: #94a3b8;
+:root {
+ --verde1: #059669;
+ --verde2: #86efac;
+ --verdeDark: #15803d;
+ --azul: #00bdf8;
+ --vermelho: crimson;
+ --cinza2: #cbd5e1;
+ --cinza3: #94a3b8;
 }
 
 * {
@@ -39,6 +40,18 @@ fieldset {
 form {
  display: flex;
  flex-direction: row;
+ gap: 1rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+#add-tarefa {
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
  gap: 1rem;
 }
 
@@ -86,6 +99,7 @@ form {
  background: var(--verde2);
  transition: all 0.5s;
  cursor: pointer;
+ color: var(--verdeDark);
 }
 
 li {
@@ -113,26 +127,28 @@ li:hover {
 }
 
 .concluir {
-  /* background: var(--verde1); */
-  color: var(--verde1)!important;
-  border: solid 2px var(--verde1) !important;
-  /* border-radius: 0.5rem !important; */
+ /* background: var(--verde1); */
+ color: var(--verde1) !important;
+ border: solid 2px var(--verde1) !important;
+ /* border-radius: 0.5rem !important; */
 }
 
-.editar:hover, .concluir:hover, .remover:hover{
-  background: white;
+.editar:hover,
+.concluir:hover,
+.remover:hover {
+ background: white;
 }
 
-.editar:hover{
-  color: var(--azul);
+.editar:hover {
+ color: var(--azul);
 }
 
-.concluir:hover{
-  color: var(--verde1);
+.concluir:hover {
+ color: var(--verde1);
 }
 
-.remover:hover{
-  color: var(--vermelho);
+.remover:hover {
+ color: var(--vermelho);
 }
 
 .concluir,
@@ -185,21 +201,21 @@ button {
  border: none;
 }
 
-select{
-  border-radius: 0.5rem;
-  padding: 0.4rem;
+select {
+ border-radius: 0.5rem;
+ padding: 0.4rem;
 }
 
-
-option{
-  padding: 0.4rem;
-  /* border-bottom: solid 1px gray; */
+option {
+ padding: 0.4rem;
+ /* border-bottom: solid 1px gray; */
 }
 
-option:nth-child(even){
-  background: var(--cinza2);
+option:nth-child(even) {
+ background: var(--cinza2);
 }
 
-otpion:hover, select:hover{
-  background: var(--cinza3);
+otpion:hover,
+select:hover {
+ background: var(--cinza3);
 }

@@ -38,10 +38,11 @@ Não tem acesso ao servidor, dito isso, toda inclusão, alteração e exclusão 
     <form id="form">
 
       <select name="filtros" id="filtros">
+
         <option value="-1" id="selecao-filtro">
           <!-- <label for=""> -->
-            Filtros
-            <i class="fa-solid fa-filter"></i>
+          Filtrar
+          <i class="fa-solid fa-filter"></i>
           <!-- </label> -->
         </option>
 
@@ -59,15 +60,16 @@ Não tem acesso ao servidor, dito isso, toda inclusão, alteração e exclusão 
         </option>
       </select>
 
-      <input type="text" name="input" 
-      id="input" placeholder="Ex: Ir ao mercado" />
+      <div id="add-tarefa">
+        <input type="text" name="input" id="input" placeholder="Ex: Ir ao mercado" />
 
-      <button type="submit" id="btn">
-        <!-- <div id="add-tarefa"> -->
+        <button type="submit" id="btn">
+          <!-- <div id="add-tarefa"> -->
           <i class="fa-solid fa-plus"></i>
           <!-- <i>Adicionar tarefa</i> -->
-        <!-- </div> -->
-      </button>
+          <!-- </div> -->
+        </button>
+      </div>
       <!-- <input type="submit" value="Adicionar tarefa" id="btn" /> -->
     </form>
 
@@ -75,7 +77,7 @@ Não tem acesso ao servidor, dito isso, toda inclusão, alteração e exclusão 
     <ul id="tarefas"></ul>
   </fieldset>
 
-  <script src="script2.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

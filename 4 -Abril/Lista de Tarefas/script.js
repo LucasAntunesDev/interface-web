@@ -1,7 +1,7 @@
 let tarefas = [];
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 let concluidos = [];
 const green = "#059669";
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 const adicionarTarefa = (t) => {
  t.preventDefault();
@@ -11,103 +11,144 @@ const adicionarTarefa = (t) => {
   (i) => i.toUpperCase() === texto.toUpperCase()
  );
  texto != "" && !tarefaExiste ? tarefas.push(texto) : "";
- tarefaExiste ? alert("Essa tarefa já existe!") : "";
- if (input.value == "") {
-  input.style.borderColor = "crimson";
-  alert("Você precisa digitar algo!");
- }
- input.value = "";
  atualizaLista();
-};
-
-const adicionarConcluidos = (c) => {
- //  const input = document.getElementById("input");
- //  const texto = input.value;
- //  texto != "" && !tarefaExiste ?
- concluidos.push(c);
+ input.value = "";
 };
 
 const atualizaLista = () => {
  const ul = document.getElementById("tarefas");
+ const checkboxesConcluidas = {};
+
  ul.innerHTML = "";
 
- tarefas.forEach((tarefa) => {
+ tarefas.forEach((input) => {
   const li = document.createElement("li");
-
-  alert('tarefa')
-  const texto = document.createElement("p");
-
+  //cria um input e o atribui como checkbox
   const checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
 
-//   checkboxes.forEach(function (checkbox) {
-   checkbox.addEventListener('change', function (this) {
-    texto.style.textDecoration = this.checked ? "line-through" : "none";
-    texto.style.color = this.checked ? green : "";
+  //criação do botão que remove a tarefa
+  const remover = document.createElement("i");
+  remover.setAttribute("class", "fa-solid fa-trash remover");
+  remover.addEventListener("click", () => removerTarefa(input));
 
-    //    checkboxes.forEach(function(checkbox) {
-    // checkbox.addEventListener('change', function() {
-    
-    // if (this.checked) {
-    //  concluidos.push(this);
-    //  alert("item adicionado");
-    // } else {
-    //  const index = concluidos.indexOf(this);
-    //  if (index !== -1) {
-    //   concluidos.splice(index, 1);
-    //   alert("removido");
-    //  }
-    // }
-    // });
-   });
-
-   //    const concluidoExiste = tarefas.some(
-   //     (t, texto) => t.toUpperCase() === texto
-   //    );
-
-      concluidoExiste ? tarefas.push(this) : "";
-      concluidoExiste? alert("Esse concluido já existe!") : "";
-  });
-
-  const remover = document.createElement("button");
-  remover.setAttribute("id", "remover");
-  remover.innerHTML = `<i class='fa-solid fa-trash remover'></i>`;
-  remover.addEventListener("click", () => removerTarefa(tarefa));
-
-  texto.innerHTML = tarefa;
-  texto.setAttribute("class", "tarefa");
-
+  const label = document.createElement("label");
+  label.innerHTML = input;
+  const textoTarefa = label.innerHTML;
+  const textoTarefaLower = textoTarefa.toLowerCase();
+  checkbox.setAttribute("id", textoTarefaLower);
+  // label.setAttribute('id', textoTarefaLower);
   const alterar = document.createElement("i");
   alterar.setAttribute("class", "fa-solid fa-pen editar");
 
-  //   alterar.addEventListener("change", function () {
-  //    texto.style.textDecoration = this.checked ? "line-through" : "none";
-  //    texto.style.color = this.checked ? green : "";
-  //   });
-  //   alterar.addEventListener("click", adicionarConcluidos());
+  //verifica se o checkbox está marcado
+  checkbox.addEventListener("change", function () {
+   label.style.textDecoration = this.checked ? "line-through" : "none";
+   label.style.color = this.checked ? green : "white";
+   if (this.checked) {
+    concluidos.push(textoTarefa);
+    alert("Tarefa adicionada. Array(" + concluidos + ")");
+    // alert(concluidos)
+   } else {
+    removerConcluido(input);
+   }
+  });
 
-  li.appendChild(texto);
+
+  // Set the state of the checkbox based on the stored information
+  if (checkbox.checked) {
+    alert("siiiiimmm")
+    checkboxesConcluidas[input.toLowerCase()] = checkbox.checked = true;
+  }
+  // if (checkboxesConcluidas[input.toLowerCase()]) {
+  //   alert("siiiiimmm")
+  //  checkbox.checked = true;
+  // }
+
+  concluidos.forEach((checkbox) => {
+    console.log('68:'+checkboxesConcluidas[checkbox.id])
+   });
+  // checkboxes.forEach((checkbox) => {
+  //   checkboxesConcluidas[checkbox.id] = checkbox.checked;
+  //  });
+
+  //  alert('68:'+ checkboxesConcluidas);
+
+  li.appendChild(label);
   li.appendChild(checkbox);
   li.appendChild(alterar);
   li.appendChild(remover);
   ul.appendChild(li);
-//  });
+
+  alterar.addEventListener("click", (label) => {
+   const mudanca = prompt("O que quer alterar?", label.innerHTML);
+   label.innerHTML = mudanca;
+  });
+ });
 };
 
 const removerTarefa = (tarefa) => {
  tarefas = tarefas.filter((t) => t !== tarefa);
+ const index = concluidos.indexOf(tarefa);
+ alert(index);
+ if (index != -1) {
+  concluidos.splice(index, 1);
+  alert("Tarefa removida. Array(" + concluidos + ")");
+ }
  atualizaLista();
 };
 
-const concluirTarefa = (t, li) => {
- // t.style.color = green;
- li.class == "concluido" ? (li.class = "") : (li.class = "concluido");
- li.setAttribute("class", "concluido");
- //  concluidos.push(t);
+const removerConcluido = (tarefa) => {
+ const index = concluidos.indexOf(tarefa);
+ alert(index);
+ if (index != -1) {
+  concluidos.splice(index, 1);
+  alert("Tarefa removida. Array(" + concluidos + ")");
+ }
+ atualizaLista();
 };
 
-console.log(concluidos);
+const filtar = () => {
+ const select = document.getElementById("filtros");
+};
+
+const concluirTarefa = (t) => {
+ concluidos.push(t);
+ console.log(concluidos);
+
+ console.log(tarefas[input]);
+ tarefas = tarefas.slice(t);
+
+ adicionarConcluidos(t);
+};
+
+const adicionarConcluidos = (c) => {
+ const ul = document.getElementById("tarefas");
+ const li = document.createElement("li");
+ li.innerHTML = '<p class="concluido"><s>' + c + "<s></p><br>";
+ ul.appendChild(li);
+};
 
 const form = document.getElementById("form");
 
 form.addEventListener("submit", adicionarTarefa);
+
+//  // Store the state of the checkboxes before clearing the list
+//  const checkboxesConcluidas = {};
+//  checkboxes.forEach((checkbox) => {
+//    checkboxesConcluidas[checkbox.id] = checkbox.checked;
+//  });
+//  ul.innerHTML = "";
+
+//  tarefas.forEach((input) => {
+//    const li = document.createElement("li");
+//    // Create an input and set it as a checkbox
+//    const checkbox = document.createElement("input");
+//    checkbox.setAttribute("type", "checkbox");
+//    // Set the state of the checkbox based on the stored information
+//    if (checkboxesConcluidas[input.toLowerCase()]) {
+//      checkbox.checked = true;
+//    }
+//    // Rest of your code...
+//  });
+// };
