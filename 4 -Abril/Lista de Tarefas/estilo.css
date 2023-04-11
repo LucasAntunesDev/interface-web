@@ -17,7 +17,7 @@
 
 body {
  font-family: Arial, Helvetica, sans-serif;
- background: #020617;
+ background: #0f172a;
  color: white;
 }
 
@@ -29,7 +29,7 @@ fieldset {
  justify-content: center;
  align-items: center;
  min-height: 50vh;
- background: #0f172a;
+ background: #121c32;
  /* border: solid 1px var(--azul); */
  border: none;
  border-radius: 1.5rem;

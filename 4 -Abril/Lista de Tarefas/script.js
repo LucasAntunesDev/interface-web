@@ -21,6 +21,9 @@ const adicionarTarefa = (t) => {
 const atualizaLista = () => {
   //carrega a ul
   const ul = document.getElementById("tarefas");
+
+  const inputFiltro = document.getElementById("filtar-nomes");
+
   ul.innerHTML = "";
   //Percorre o array tarefas
   tarefas.forEach((input) => {
@@ -52,7 +55,7 @@ const atualizaLista = () => {
     li.appendChild(alterar);
     li.appendChild(remover);
 
-    select.addEventListener("change", filtrar());
+    // select.addEventListener("change", filtrar());
 
     ul.appendChild(li);
 
@@ -67,37 +70,35 @@ const atualizaLista = () => {
       }
     });
 
-    //Qunado eu clico duas vezes, ele substituí, 
-    //falta  fazer isso da primeira vez
+    //Permite alterar a tarefa
     alterar.addEventListener("click", () => {
       const input = document.getElementById("input");
       const texto = label.innerHTML;
-      
+
       input.focus();
-      
+
       //Percorre o array de tarefas
-      tarefas.forEach((t) => {
+      tarefas.forEach((tarefa) => {
         //Coloca o valor do input igual a variável texto
         input.value = texto;
-        t = input.value;
+        tarefa = input.value;
         //Filtra o array tarefas para mostar tudo o que
         //não for t
-        tarefas = tarefas.filter((e) => e !== t);
+        tarefas = tarefas.filter((t) => t !== tarefa);
+        //só que quando eu altero a tarefa,
+        //a lista não mantém a ordem original
       });
 
       atualizaLista();
     });
   });
-
 };
 
 const removerTarefa = (tarefa) => {
   tarefas = tarefas.filter((t) => t !== tarefa);
   const index = concluidos.indexOf(tarefa);
-  alert(index);
   if (index != -1) {
     concluidos.splice(index, 1);
-    alert("Tarefa removida. Array(" + concluidos + ")");
   }
   atualizaLista();
 };
@@ -105,29 +106,10 @@ const removerTarefa = (tarefa) => {
 //Remover a tarefa do array concluidos
 const removerConcluido = (tarefa) => {
   const index = concluidos.indexOf(tarefa);
-  alert(index);
   if (index != -1) {
     concluidos.splice(index, 1);
-    alert("Tarefa removida. Array(" + concluidos + ")");
   }
   atualizaLista();
-};
-
-//Função para filtar
-const filtrar = (tarefa, l) => {
-  const select = document.getElementById("filtros");
-
-  switch (select.value) {
-    case "concluidos":
-      alert("Concluidos");
-      //  tarefas.filter((t) => alert(t.tarefas.includes.class('concluidos')))
-      // removerTarefa(l)
-      // t = tarefas.filter((t) => t == tarefa)
-      break;
-    case "nao-concluidos":
-      alert("Não concluidos");
-      break;
-  }
 };
 
 //Função para concluir a tarefa
@@ -147,6 +129,13 @@ const adicionarConcluidos = (c) => {
   const li = document.createElement("li");
   li.innerHTML = '<p class="concluido"><s>' + c + "<s></p><br>";
   ul.appendChild(li);
+};
+
+//Função para filtar (em desenvolvimento)
+const filtrarNome = () => {
+  const inputFiltro = document.getElementById("filtar-nomes");
+  const texto = this.value;
+  tarefas = tarefas.filter((t) => t == texto);
 };
 
 const form = document.getElementById("form");

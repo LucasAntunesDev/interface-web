@@ -1,15 +1,16 @@
 <!-- Desenvolvimento de um FRONT-END
 
 Você deve fazer um site que represente uma lista de tarefas com HTML, CSS e JavaScript com as seguintes funcionalidades:
-- Listar as tarefas;
-- Permitir incluir novas tarefas;
-- Permitir excluir tarefas;
-- Permitir alterar tarefas;
-- Permitir marcar a tarefa como concluída;
-- Permitir filtrar somente tarefas que não estão concluídas;
-- Permitir filtrar tarefas que estão concluídas;
-- Permitir filtrar tarefas pelo nome;
-- Utilizar cor para diferenciar tarefas concluídas das não concluídas;
+- Listar as tarefas; FEITO
+- Permitir incluir novas tarefas; FEITO
+- Permitir excluir tarefas; FEITO
+- Permitir alterar tarefas;  FEITO
+- Permitir marcar a tarefa como concluída; FEITO
+- Utilizar cor para diferenciar tarefas concluídas das não concluídas; FEITO
+=> => => FALTAM: <= <= <=
+- Permitir filtrar somente tarefas que não estão concluídas; FALTA
+- Permitir filtrar tarefas que estão concluídas; FALTA
+- Permitir filtrar tarefas pelo nome; FALTA
 
 Não tem acesso ao servidor, dito isso, toda inclusão, alteração e exclusão devem ser realizadas através do javascript no navegador do usuário; -->
 
@@ -45,7 +46,7 @@ Não tem acesso ao servidor, dito isso, toda inclusão, alteração e exclusão 
       <form id="form">
         <div id="div-filtros">
           <input type="text" name="filtrar-nomes" id="filtrar-nomes"
-          placeholder="Filtar tarefa por nome" />
+          placeholder="Filtar tarefa por nome" onchange="filtrarNome(this)"/>
 
           <select name="filtros" id="filtros">
             <option value="-1" id="selecao-filtro">
