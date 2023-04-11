@@ -15,69 +15,78 @@ Não tem acesso ao servidor, dito isso, toda inclusão, alteração e exclusão 
 
 <!DOCTYPE html>
 <html lang="PT-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilo.css" />
+    <title>Lista de tarefas</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/2098/2098402.png"
+      type="image/x-icon"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="estilo.css" />
-  <title>Lista de tarefas</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/2098/2098402.png" type="image/x-icon" />
-</head>
+  <body>
+    <fieldset>
+      <h1 id="title">
+        <i class="fa-solid fa-list-check"></i>
+        Tarefas
+      </h1>
 
-<body>
-  <fieldset>
-    <h1 id="title">
-      <i class="fa-solid fa-list-check"></i>
-      Tarefas
-    </h1>
+      <form id="form">
+        <div id="div-filtros">
+          <input type="text" name="filtrar-nomes" id="filtrar-nomes"
+          placeholder="Filtar tarefa por nome" />
 
-    <form id="form">
+          <select name="filtros" id="filtros">
+            <option value="-1" id="selecao-filtro">
+              Filtrar
+              <i class="fa-solid fa-filter"></i>
+            </option>
 
-      <select name="filtros" id="filtros">
+            <option value="concluidos" id="concluidos">
+              <label for="">
+                <i class="fa-solid fa-list-check"></i>
+                Concluídos
+              </label>
+            </option>
 
-        <option value="-1" id="selecao-filtro">
-          <!-- <label for=""> -->
-          Filtrar
-          <i class="fa-solid fa-filter"></i>
-          <!-- </label> -->
-        </option>
+            <option value="nao-concluidos" id="nao-concluidos">
+              <label for=""> Não Concluídos </label>
+            </option>
+          </select>
+        </div>
 
-        <option value="concluidos" id="concluidos">
-          <label for="">
-            <i class="fa-solid fa-list-check"></i>
-            Concluídos
-          </label>
-        </option>
+        <div id="add-tarefa">
+          <input
+            type="text"
+            name="input"
+            id="input"
+            placeholder="Ex: Ir ao mercado"
+          />
+          <button type="submit" id="btn">
+            <!-- <div id="add-tarefa"> -->
+            <i class="fa-solid fa-plus"></i>
+            <!-- <i>Adicionar tarefa</i> -->
+            <!-- </div> -->
+          </button>
+        </div>
+        <!-- <input type="submit" value="Adicionar tarefa" id="btn" /> -->
+      </form>
 
-        <option value="nao-concluidos" id="nao-concluidos">
-          <label for="">
-            Não Concluídos
-          </label>
-        </option>
-      </select>
+      <!-- <hr /> -->
+      <ul id="tarefas"></ul>
+    </fieldset>
 
-      <div id="add-tarefa">
-        <input type="text" name="input" id="input" placeholder="Ex: Ir ao mercado" />
-<input type="checkbox" checked="true" name="" id="">
-        <button type="submit" id="btn">
-          <!-- <div id="add-tarefa"> -->
-          <i class="fa-solid fa-plus"></i>
-          <!-- <i>Adicionar tarefa</i> -->
-          <!-- </div> -->
-        </button>
-      </div>
-      <!-- <input type="submit" value="Adicionar tarefa" id="btn" /> -->
-    </form>
-
-    <!-- <hr /> -->
-    <ul id="tarefas"></ul>
-  </fieldset>
-
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

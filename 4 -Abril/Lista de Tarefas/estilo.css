@@ -61,7 +61,7 @@ form {
  color: var(--azul);
 }
 
-#input {
+#input, #filtrar-nomes {
  padding: 0.4rem;
  background: none;
  border: none;
@@ -219,4 +219,12 @@ option:nth-child(even) {
 otpion:hover,
 select:hover {
  background: var(--cinza3);
+}
+
+#div-filtros{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
