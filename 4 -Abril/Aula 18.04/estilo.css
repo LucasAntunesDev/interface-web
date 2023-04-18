@@ -1,0 +1,46 @@
+body{
+    font-family: monospace;
+    font-size: xx-large;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    border-radius: 0.5rem;
+    border: none;
+    color: white;
+    padding: 0.4rem;
+    width: 3.5rem;
+    height: 2.5rem;
+}
+
+#mais{
+    background: rgb(30, 131, 72);
+}
+
+#mais:hover{
+    background: rgb(53, 189, 110);
+    cursor: pointer;
+}
+
+#menos{
+    background: crimson;
+}
+
+#menos:hover{
+    background: rgb(255, 68, 105);
+    cursor: pointer;
+}
+
+#div{
+    margin-inline: 1rem;
+}
+
+h1{
+    text-align: center;
+}
