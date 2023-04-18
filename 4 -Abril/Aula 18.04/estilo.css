@@ -1,6 +1,6 @@
 body{
     font-family: monospace;
-    font-size: xx-large;
+    background: #0f172a;
 }
 
 main{
@@ -17,6 +17,8 @@ button{
     padding: 0.4rem;
     width: 3.5rem;
     height: 2.5rem;
+    font-size: x-large;
+    text-align: center;
 }
 
 #mais{
@@ -32,15 +34,24 @@ button{
     background: crimson;
 }
 
-#menos:hover{
+
+#menos:hover {
     background: rgb(255, 68, 105);
     cursor: pointer;
 }
 
-#div{
-    margin-inline: 1rem;
+#menos:disabled, #mais:disabled{
+    color: crimson;
+    background: rgb(189, 104, 121);
 }
 
-h1{
+#div{
+    margin-inline: 1rem;
+    color: #0ea5e9;
+    font-size: xx-large;
+}
+
+h1, p{
     text-align: center;
+    color: #0ea5e9;
 }

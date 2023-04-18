@@ -1,21 +1,35 @@
 const mais = document.getElementById('mais');
 const menos = document.getElementById('menos');
 const div = document.getElementById('div');
-let num = 0;
+const MIN = 4;
+const MAX = 24;
+let num = MIN;
+div.innerHTML = MIN;
 
-const aumentar = () => {
-    num += 1;
-    atualizar();
+mais.addEventListener('click', () => {
+    atualizar(num + 1);
+});
+
+menos.addEventListener('click', () => {
+    atualizar(num - 1);
+});
+
+const atualizar = (x) => {
+    if(x < MIN || x > MAX) return;
+    num = x;
+    
+    menos.disabled = num == MAX
+    menos.disabled = num == MIN
+
+    const texto = document.getElementById('texto');
+    texto.style.fontSize = `${num}rem`;
+
+    div.innerHTML = `${num<10?'0': ''}${num}`
 }
 
-const diminuir = () => {
-    num -= 1;
-    atualizar();
-}
+document.body.addEventListener('keydown', (event) =>{
+    if(event.key === '-') atualizar(num-1);
+    else if(event.key === '+') atualizar(num+1);
+})
 
-const atualizar = () => {
-    div.innerHTML = num;
-}
-
-mais.addEventListener('click', aumentar);
-menos.addEventListener('click', diminuir);
+atualizar(MIN);
