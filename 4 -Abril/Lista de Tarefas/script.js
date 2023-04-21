@@ -1,143 +1,127 @@
+const input = document.getElementById("input");
+const btn = document.getElementById("btn");
+const todasRadio = document.getElementById("todas");
+const completas = document.getElementById("concluidas");
+const incompletas = document.getElementById("nao-completas");
+const filtroNome = document.getElementById("filtrar-nome");
+const faltam = document.getElementById("faltam");
+
 let tarefas = [];
-let concluidos = [];
-const green = "#059669";
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-const checkboxesConcluidas = {};
 
-//Adiciona uma nova tarefa
-const adicionarTarefa = (t) => {
-  t.preventDefault();
-  const input = document.getElementById("input");
-  const texto = input.value;
-  const tarefaExiste = tarefas.some(
-    (i) => i.toUpperCase() === texto.toUpperCase()
-  );
-  texto != "" && !tarefaExiste ? tarefas.push(texto) : "";
-  atualizaLista();
-  input.value = "";
+const adicionarTarefa = () => {
+ const textoTarefa = input.value;
+ //Verifica se a tarefa já existe
+ const tarefaExiste = tarefas.some(
+  (i) => i.texto.toUpperCase() === textoTarefa.toUpperCase()
+ );
+
+ if (textoTarefa != "" && !tarefaExiste) {
+  //Objeto que guarda o nome da tarefa e o estado de conclusão dela
+  tarefas.push({ texto: textoTarefa, concluida: false });
+ }
+
+ input.value = "";
+ atualizaLista();
 };
 
-//Atualiza a lista de tarefas
+//Função para remover a tarefa
+const removerTarefa = (index) => {
+ tarefas.splice(index, 1);
+ atualizaLista();
+};
+
+//Função para atualizar o valor da tarefa
+const atualizaTarefa = (index, texto) => {
+ tarefas[index].texto = texto;
+ atualizaLista();
+};
+
+//Função para mudar o estado de conclusão da tarefa
+const mudarCompleto = (index) => {
+ tarefas[index].concluida = !tarefas[index].concluida;
+ atualizaLista();
+};
+
 const atualizaLista = () => {
-  //carrega a ul
-  const ul = document.getElementById("tarefas");
+ const ul = document.getElementById("ul");
+ ul.innerHTML = "";
 
-  const inputFiltro = document.getElementById("filtar-nomes");
+ //Atualiza a lista de acordo com os filtros
+ let tarefasFiltradas = tarefas.filter((tarefa) => {
+  if (completas.checked) return tarefa.concluida;
+  else if (incompletas.checked) return !tarefa.concluida;
+  else return true;
+ });
 
-  ul.innerHTML = "";
-  //Percorre o array tarefas
-  tarefas.forEach((input) => {
-    //Carrega / cria os elemntos
-    const li = document.createElement("li");
-    const select = document.getElementById("filtros");
-    // filtos.addEventListener('change', filtar())
-    //cria um input e o atribui como checkbox
-    const checkbox = document.createElement("input");
-    checkbox.setAttribute("type", "checkbox");
-    const remover = document.createElement("i");
-    remover.setAttribute("class", "fa-solid fa-trash remover");
-    //Remove a tarefa
-    remover.addEventListener("click", () => removerTarefa(input));
-    //Coloca o texto do input no innerHTML da tarefa
-    const label = document.createElement("label");
-    label.innerHTML = input;
-    const textoTarefa = label.innerHTML;
-    checkbox.setAttribute("id", textoTarefa);
-    // checkbox.addEventListener("click", () => checar(checkbox));
-    // label.setAttribute('id', textoTarefaLower);
-    const alterar = document.createElement("i");
-    alterar.setAttribute("class", "fa-solid fa-pen editar");
+ //Filtra a tarefa pelo nome
+ tarefasFiltradas = tarefasFiltradas.filter((tarefa) =>
+  tarefa.texto.includes(filtroNome.value)
+ );
 
-    //tem que verificar se o checkbox está marcado
-
-    li.appendChild(label);
-    li.appendChild(checkbox);
-    li.appendChild(alterar);
-    li.appendChild(remover);
-
-    // select.addEventListener("change", filtrar());
-
-    ul.appendChild(li);
-
-    checkbox.addEventListener("change", function () {
-      if (this.checked) {
-        label.setAttribute("class", "concluido");
-      }
-      if (this.checked) {
-        concluidos.push(checkbox);
-      } else {
-        removerConcluido(input);
-      }
-    });
-
-    //Permite alterar a tarefa
-    alterar.addEventListener("click", () => {
-      const input = document.getElementById("input");
-      const texto = label.innerHTML;
-
-      input.focus();
-
-      //Percorre o array de tarefas
-      tarefas.forEach((tarefa) => {
-        //Coloca o valor do input igual a variável texto
-        input.value = texto;
-        tarefa = input.value;
-        //Filtra o array tarefas para mostar tudo o que
-        //não for t
-        tarefas = tarefas.filter((t) => t !== tarefa);
-        //só que quando eu altero a tarefa,
-        //a lista não mantém a ordem original
-      });
-
-      atualizaLista();
-    });
-  });
-};
-
-const removerTarefa = (tarefa) => {
-  tarefas = tarefas.filter((t) => t !== tarefa);
-  const index = concluidos.indexOf(tarefa);
-  if (index != -1) {
-    concluidos.splice(index, 1);
-  }
-  atualizaLista();
-};
-
-//Remover a tarefa do array concluidos
-const removerConcluido = (tarefa) => {
-  const index = concluidos.indexOf(tarefa);
-  if (index != -1) {
-    concluidos.splice(index, 1);
-  }
-  atualizaLista();
-};
-
-//Função para concluir a tarefa
-const concluirTarefa = (t) => {
-  concluidos.push(t);
-  console.log(concluidos);
-
-  console.log(tarefas[input]);
-  tarefas = tarefas.slice(t);
-
-  adicionarConcluidos(t);
-};
-
-//Função para adicionar item concluidos
-const adicionarConcluidos = (c) => {
-  const ul = document.getElementById("tarefas");
+ tarefasFiltradas.forEach((tarefa, index) => {
   const li = document.createElement("li");
-  li.innerHTML = '<p class="concluido"><s>' + c + "<s></p><br>";
+
+  const label = document.createElement("label");
+  label.classList.add("labelTarefa");
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.checked = tarefa.concluida;
+  checkbox.addEventListener("change", () => mudarCompleto(index));
+
+  label.appendChild(checkbox);
+  tarefa.concluida ? label.classList.add("concluido") : "";
+
+  const textoTarefa = document.createElement("span");
+  textoTarefa.innerHTML = tarefa.texto;
+  textoTarefa.classList.add("texto");
+  label.appendChild(textoTarefa);
+
+  const remover = document.createElement("button");
+  remover.setAttribute("class", "fa-solid fa-trash remover");
+  remover.addEventListener("click", () => removerTarefa(index));
+  
+  const alterar = document.createElement("button");
+  alterar.setAttribute("class", "fa-solid fa-pen editar");
+  
+  //Permite alterar a tarefa
+  alterar.addEventListener("click", () => {
+   const input = document.getElementById("input");
+   // input.value = tarefa.texto;
+   // input.focus();
+   const novoTexto = prompt("Editar tarefa", tarefa.texto);
+   if (novoTexto) {
+    atualizaTarefa(index, novoTexto);
+   }
+  });
+
+  const btnsDiv = document.createElement('div');
+  btnsDiv.classList.add('btns-div')
+
+  btnsDiv.appendChild(alterar);
+  btnsDiv.appendChild(remover);
+  li.appendChild(label);
+  li.appendChild(btnsDiv);
   ul.appendChild(li);
+ });
+
 };
 
-//Função para filtar (em desenvolvimento)
-const filtrarNome = () => {
-  const inputFiltro = document.getElementById("filtar-nomes");
-  const texto = this.value;
-  tarefas = tarefas.filter((t) => t == texto);
-};
+btn.addEventListener("click", adicionarTarefa);
 
-const form = document.getElementById("form");
+input.addEventListener("keypress", (event) => {
+ if (event.key === "Enter") {
+  event.preventDefault();
+  document.getElementById("btn").click();
+ }
+});
 
-form.addEventListener("submit", adicionarTarefa);
+filtroNome.addEventListener("input", atualizaLista);
+
+todasRadio.addEventListener("change", atualizaLista);
+
+completas.addEventListener("change", atualizaLista);
+
+incompletas.addEventListener("change", atualizaLista);
+
+atualizaLista();

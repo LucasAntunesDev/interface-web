@@ -2,6 +2,7 @@ let tarefas = [];
 let concluidos = [];
 const green = "#059669";
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const filtroNome = document.getElementById('filtar-nome')
 // const checkboxesConcluidas = {};
 const checkboxesConcluidas = [];
 
@@ -13,7 +14,8 @@ const adicionarTarefa = (t) => {
  const tarefaExiste = tarefas.some(
   (i) => i.texto.toUpperCase() === texto.toUpperCase()
  );
- texto != "" && !tarefaExiste ? tarefas.push({texto: texto, concluida: false}) : "";
+//  texto != "" && !tarefaExiste ? tarefas.push({texto: texto, concluida: false}) : "";
+ texto != "" && !tarefaExiste ? tarefas.push('texto' [texto], 'concluida' [false]) : "";
  atualizaLista();
  input.value = "";
 };
@@ -24,6 +26,12 @@ const atualizaLista = () => {
  const ul = document.getElementById("tarefas");
 
  ul.innerHTML = "";
+
+ if (filtroNome.value) {
+  tarefasFiltradas = tarefasFiltradas.filter((tarefa) => {
+   return tarefa.text.includes(filtroNome.value);
+  });
+
  //Percorre o array tarefas
  tarefas.forEach((input) => {
   //Carrega / cria os elemntos
@@ -102,7 +110,7 @@ const atualizaLista = () => {
 
    //  checkboxesConcluidas.forEach((c) => {
    //   console.log("classe: " + c.class);
-   //  });
+    // });
   });
 
   //Permite alterar a tarefa
