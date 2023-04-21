@@ -28,34 +28,35 @@ Não tem acesso ao servidor, dito isso, toda inclusão, alteração e exclusão 
 </head>
 
 <body>
-    <fieldset>
+    <fieldset class="flex-col">
         <h1 id="title">
             <i class="fa-solid fa-list-check"></i>
             Tarefas
         </h1>
 
-        <div id="filtros">
+        <div id="filtros" class="flex-col">
+
             <input type="text" id="filtrar-nome" placeholder="Filtrar pelo nome">
 
-            <div id="filtros-conclusao">
-                <label for="todas">
+            <div id="filtros-conclusao" class="flex-row gap-1">
+                <label for="todas" class="flex-row">
                     <input type="radio" id="todas" name="filter" checked>
                     Todas
                 </label>
 
-                <label for="concluidas">
+                <label for="concluidas" class="flex-row">
                     <input type="radio" id="concluidas" name="filter">
                     Concluídas
                 </label>
 
-                <label for="nao-completas">
+                <label for="nao-completas" class="flex-row">
                     <input type="radio" id="nao-completas" name="filter">
                     Não concluídas
                 </label>
             </div>
         </div>
 
-        <div id="add-tarefa">
+        <div id="add-tarefa" class="flex-row gap-1">
             <input type="text" id="input" placeholder="Ex: Ir ao mercado">
             <button id="btn">
                 <i class="fa-solid fa-plus"></i>

@@ -62,7 +62,7 @@ const atualizaLista = () => {
   const li = document.createElement("li");
 
   const label = document.createElement("label");
-  label.classList.add("labelTarefa");
+  label.setAttribute("class", "flex-row gap-1");
 
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
@@ -80,23 +80,21 @@ const atualizaLista = () => {
   const remover = document.createElement("button");
   remover.setAttribute("class", "fa-solid fa-trash remover");
   remover.addEventListener("click", () => removerTarefa(index));
-  
+
   const alterar = document.createElement("button");
   alterar.setAttribute("class", "fa-solid fa-pen editar");
-  
+
   //Permite alterar a tarefa
   alterar.addEventListener("click", () => {
-   const input = document.getElementById("input");
-   // input.value = tarefa.texto;
-   // input.focus();
    const novoTexto = prompt("Editar tarefa", tarefa.texto);
-   if (novoTexto) {
+
     atualizaTarefa(index, novoTexto);
-   }
+
+   atualizaLista();
   });
 
-  const btnsDiv = document.createElement('div');
-  btnsDiv.classList.add('btns-div')
+  const btnsDiv = document.createElement("div");
+  btnsDiv.setAttribute("class", "flex-row gap-1");
 
   btnsDiv.appendChild(alterar);
   btnsDiv.appendChild(remover);
@@ -104,7 +102,6 @@ const atualizaLista = () => {
   li.appendChild(btnsDiv);
   ul.appendChild(li);
  });
-
 };
 
 btn.addEventListener("click", adicionarTarefa);
