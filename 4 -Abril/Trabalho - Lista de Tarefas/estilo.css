@@ -1,0 +1,375 @@
+/* Variáveis de cor */
+:root {
+  --verde1: #059669;
+  --verde2: #86efac;
+  --verdeDark: #15803d;
+  --azul: #00bdf8;
+  --vermelho: crimson;
+  --cinza2: #cbd5e1;
+  --cinza3: #94a3b8;
+  --cinza4: #64748b;
+  --slate700: #334155;
+  --slate900: #0f172a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background: var(--slate900);
+  color: white;
+}
+
+#title {
+  margin: 1rem auto;
+  font-size: 3rem;
+  color: var(--azul);
+}
+
+fieldset {
+  margin: 2rem auto;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  background: #121c32;
+  border: none;
+  border-radius: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: -1px -1px 15px 5px #0206173b, 0 4px 6px -4px #0206173b;
+}
+
+#input {
+  padding: 0.4rem;
+  border: none;
+  border-radius: 0.5rem;
+  border: solid 1px var(--slate700);
+  background: none;
+  color: var(--cinza3);
+  box-shadow: -1px -1px 15px 5px #0206173b, 0 4px 6px -4px #0206173b;
+}
+
+#filtrar-nome {
+  padding: 0.4rem;
+  background: none;
+  border: none;
+  border-bottom: solid 1px var(--slate700);
+  color: var(--cinza3);
+  margin-bottom: 1rem;
+}
+
+#filtrar-nome::placeholder {
+  color: var(--cinza4);
+}
+
+#input::placeholder {
+  font-style: italic;
+  color: var(--cinza4);
+}
+
+#input:autofill,
+#input:-webkit-autofill {
+  background: none;
+}
+
+#input:focus,
+#filtrar-nome {
+  outline: none;
+  outline-offset: max(2px, 0.15em);
+}
+
+#btn {
+  border-radius: 100rem;
+  padding: 0.8rem;
+  background: var(--verde1);
+  color: whitesmoke;
+  border: none;
+  transition: all 0.5s;
+}
+
+#btn:hover {
+  background: var(--verde2);
+  transition: all 0.5s;
+  cursor: pointer;
+  color: var(--verdeDark);
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  place-items: center;
+  width: 30vw;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px var(--slate700) solid;
+  transition: all 0.5s;
+}
+
+li:nth-child(1) {
+  margin-top: 1rem;
+}
+
+li:hover {
+  color: var(--azul);
+}
+
+.remover {
+  background: var(--vermelho);
+}
+
+.editar {
+  background: var(--azul);
+}
+
+.concluir {
+  border: solid 2px var(--verde1) !important;
+}
+
+.editar:hover,
+.concluir:hover,
+.remover:hover {
+  background: white;
+}
+
+.editar:hover {
+  color: var(--azul);
+}
+
+.concluir:hover {
+  color: var(--verde1);
+}
+
+.remover:hover {
+  color: var(--vermelho);
+}
+
+.concluir,
+.editar,
+.remover {
+  border-radius: 0.5rem;
+  color: whitesmoke;
+  border: none;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-weight: bolder;
+  padding: 0.4rem;
+}
+
+#remover,
+.fa-solid,
+.fa-trash {
+  text-transform: capitalize;
+}
+
+#input-camp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+hr {
+  height: 8px;
+  background: var(--vermelho800);
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    var(--slate700),
+    transparent
+  );
+  width: 80%;
+  margin: 2rem auto;
+  border: 0;
+  height: 1px;
+}
+
+.concluido {
+  color: var(--verde1);
+  cursor: pointer;
+  text-decoration: line-through;
+  transition: all 0.5s;
+}
+
+.concluido:hover {
+  color: var(--verde2);
+  transition: all 0.5s;
+}
+
+input {
+  accent-color: var(--verde1);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--cinza3);
+  caret-color: var(--cinza3);
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+/* Customização do checkbox */
+
+input[type="checkbox"] {
+  appearance: none;
+  background: none;
+  font-size: large;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  border-radius: 1.5rem;
+  background: var(--verde1);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:hover {
+  border: solid 0.15em var(--azul);
+  color: var(--azul);
+}
+
+input[type="checkbox"]:hover:checked {
+  border: solid 0.15em var(--verde2);
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:checked {
+  border: solid 2px var(--verde1);
+}
+
+#filtros {
+  margin-block: 1rem;
+}
+
+.texto:hover {
+  cursor: pointer;
+}
+
+ul {
+  margin-bottom: 1rem;
+}
+
+input[type="radio"] {
+  appearance: none;
+  background: none;
+  font-size: large;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 100rem;
+  transform: translateY(-0.075em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Customização do radio */
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  border-radius: 1.5rem;
+  background: var(--verde1);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:focus {
+  outline: none;
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type="radio"]:checked {
+  border: solid 2px var(--verde1);
+}
+
+#filtros-conclusao label {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+:is(input[type="radio"]:checked + input[type="radio"]:hover) {
+  cursor: pointer;
+  color: var(--verde2);
+  clip-path: var(--verde2);
+  border-color: var(--verde2);
+}
+
+:is(p, h1, span, ::placeholder, label) {
+  font-family: monospace;
+  font-size: large;
+}
+
+span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 18rem;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+#add-tarefa h3 {
+  margin-bottom: 1rem;
+  color: var(--azul);
+}
