@@ -18,7 +18,7 @@ const atualizar = (x) => {
     if(x < MIN || x > MAX) return;
     num = x;
     
-    menos.disabled = num == MAX
+    mais.disabled = num == MAX
     menos.disabled = num == MIN
 
     const texto = document.getElementById('texto');
