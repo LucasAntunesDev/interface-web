@@ -1,17 +1,3 @@
-<!-- Desenvolvimento de um FRONT-END
-Você deve fazer um site que represente uma lista de tarefas com HTML, CSS e JavaScript com as seguintes funcionalidades:
-- Listar as tarefas; 
-- Permitir incluir novas tarefas;
-- Permitir excluir tarefas;
-- Permitir alterar tarefas;
-- Permitir marcar a tarefa como concluída;
-- Utilizar cor para diferenciar tarefas concluídas das não concluídas;
-- Permitir filtrar somente tarefas que não estão concluídas;
-- Permitir filtrar tarefas que estão concluídas;
-- Permitir filtrar tarefas pelo nome;
-
-Não tem acesso ao servidor, dito isso, toda inclusão, alteração e exclusão devem ser realizadas através do javascript no navegador do usuário; -->
-
 <!DOCTYPE html>
 <html lang="PT-br">
 
@@ -33,6 +19,11 @@ Não tem acesso ao servidor, dito isso, toda inclusão, alteração e exclusão 
             <i class="fa-solid fa-list-check"></i>
             Lista de tarefas
         </h1>
+
+        <button type="button" id="limpar">
+            <i class="fa-solid fa-rotate-left"></i>
+            Limpar tarefas
+        </button>
 
         <div id="filtros" class="flex-col">
 
