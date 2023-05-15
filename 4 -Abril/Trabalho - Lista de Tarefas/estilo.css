@@ -399,3 +399,42 @@ span {
 #limpar>i:hover{
   color: var(--cinza5);
 }
+
+@media only screen and (max-width: 990px) {
+  fieldset{
+    width: 90vw;
+  }
+
+  #title{
+    font-size:2rem;
+  }
+ 
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: fit-content;
+}
+}
+
+@media only screen and (max-width: 400px) {
+  #title{
+    font-size:1rem;
+  }
+
+  #filtros-conclusao{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+
+}
+
+@media only screen and (max-width: 300px) {
+  #btn{
+    display: flex;
+    margin-inline: auto;
+    margin-top: 1rem;
+  }
+}
