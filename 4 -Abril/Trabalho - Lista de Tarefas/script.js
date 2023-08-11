@@ -1,124 +1,123 @@
-const input = $("#input");
-const btn = $("#btn");
-const limpar = $("#limpar");
-const todasRadio = $("#todas");
-const completas = $("#concluidas");
-const incompletas = $("#nao-completas");
-const filtroNome = $("#filtrar-nome");
+const input = document.getElementById("input");
+const btn = document.getElementById("btn");
+const todasRadio = document.getElementById("todas");
+const completas = document.getElementById("concluidas");
+const incompletas = document.getElementById("nao-completas");
+const filtroNome = document.getElementById("filtrar-nome");
 
 let tarefas = [];
 
 const adicionarTarefa = () => {
- const textoTarefa = input.val();
- //Verifica se a tarefa já existe
- const tarefaExiste = tarefas.some(
-  (i) => i.texto.toUpperCase() === textoTarefa.toUpperCase()
- );
+    const textoTarefa = input.value;
 
- if (textoTarefa != "" && !tarefaExiste) {
-  //Objeto que guarda o nome da tarefa e o estado de conclusão dela
-  tarefas.push({ texto: textoTarefa, concluida: false });
- }
+    const tarefaExiste = tarefas.some(
+        (i) => i.texto.toUpperCase() === textoTarefa.toUpperCase()
+    );
 
- input.val("");
- atualizaLista();
+    if (textoTarefa != "" && !tarefaExiste) {
+        tarefas.push({ texto: textoTarefa, concluida: false });
+        localStorage.setItem('tarefa', JSON.stringify(tarefas));
+    }
+
+    input.value = "";
+    atualizaLista();
+    console.log(JSON.parse(localStorage.getItem('tarefa')))
 };
 
 //Função para remover a tarefa
 const removerTarefa = (index) => {
- //Pergunta para o usuário se ele deseja confirmar a exclusão e,
- //em caso postivio, exclui a tarefa
- const resposta = confirm("Você realmente quer excluir a tarefa?");
- if (resposta == true) {
-  tarefas.splice(index, 1);
- }
- atualizaLista();
+
+    const resposta = confirm("Você realmente quer excluir a tarefa?");
+    if (resposta == true) {
+        tarefas.splice(index, 1);
+    }
+    atualizaLista();
 };
 
-//Função para atualizar o valor da tarefa
 const atualizaTarefa = (index, texto) => {
- tarefas[index].texto = texto;
- atualizaLista();
+    tarefas[index].texto = texto;
+    atualizaLista();
 };
 
-//Função para mudar o estado de conclusão da tarefa
 const mudarCompleto = (index) => {
- tarefas[index].concluida = !tarefas[index].concluida;
- atualizaLista();
-};
-
-const limparTarefas = () => {
- tarefas = "";
- location.reload();
+    tarefas[index].concluida = !tarefas[index].concluida;
+    atualizaLista();
 };
 
 const atualizaLista = () => {
- const ul = $("#ul");
- ul.empty();
+    const ul = document.getElementById("ul");
+    ul.innerHTML = "";
 
- //Atualiza a lista de acordo com os filtros
- let tarefasFiltradas = tarefas.filter((tarefa) => {
-  if (completas.is(":checked")) return tarefa.concluida;
-  else if (incompletas.is(":checked")) return !tarefa.concluida;
-  else return true;
- });
 
- //Filtra a tarefa pelo nome
- tarefasFiltradas = tarefasFiltradas.filter((tarefa) =>
-  tarefa.texto.includes(filtroNome.val())
- );
+    let tarefasFiltradas = tarefas.filter((tarefa) => {
+        if (completas.checked) return tarefa.concluida;
+        else if (incompletas.checked) return !tarefa.concluida;
+        else return true;
+    });
 
- tarefasFiltradas.forEach((tarefa, index) => {
-  const li = $("<li>");
+    //Filtra a tarefa pelo nome
+    tarefasFiltradas = tarefasFiltradas.filter((tarefa) =>
+        tarefa.texto.includes(filtroNome.value)
+    );
 
-  const label = $("<label>").addClass("flex-row gap-1");
+    tarefasFiltradas.forEach((tarefa, index) => {
+        const li = document.createElement("li");
 
-  const checkbox = $("<input>")
-   .attr("type", "checkbox")
-   .prop("checked", tarefa.concluida);
-  checkbox.on("change", () => mudarCompleto(index));
+        const label = document.createElement("label");
+        label.setAttribute("class", "flex-row gap-1");
 
-  label.append(checkbox);
-  tarefa.concluida ? label.addClass("concluido") : "";
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = tarefa.concluida;
+        checkbox.addEventListener("change", () => mudarCompleto(index));
 
-  const textoTarefa = $("<span>").addClass("texto").text(tarefa.texto);
-  label.append(textoTarefa);
+        label.appendChild(checkbox);
+        tarefa.concluida ? label.classList.add("concluido") : "";
 
-  const remover = $("<button>").addClass("fa-solid fa-trash remover");
-  remover.on("click", () => removerTarefa(index));
+        const textoTarefa = document.createElement("span");
+        textoTarefa.innerHTML = tarefa.texto;
+        textoTarefa.classList.add("texto");
+        label.appendChild(textoTarefa);
 
-  const alterar = $("<button>").addClass("fa-solid fa-pen editar");
+        const remover = document.createElement("button");
+        remover.setAttribute("class", "fa-solid fa-trash remover");
+        remover.addEventListener("click", () => removerTarefa(index));
 
-  //Permite alterar a tarefa
-  alterar.on("click", () => {
-   const novoTexto = prompt("O que deseja alterar?", tarefa.texto);
+        const alterar = document.createElement("button");
+        alterar.setAttribute("class", "fa-solid fa-pen editar");
 
-   atualizaTarefa(index, novoTexto);
 
-   atualizaLista();
-  });
+        alterar.addEventListener("click", () => {
+            const novoTexto = prompt("O que deseja alterar?", tarefa.texto);
 
-  const btnsDiv = $("<div>").addClass("flex-row gap-1");
+            atualizaTarefa(index, novoTexto);
 
-  btnsDiv.append(alterar);
-  btnsDiv.append(remover);
-  li.append(label);
-  li.append(btnsDiv);
-  ul.append(li);
- });
+            atualizaLista();
+        });
+
+        const btnsDiv = document.createElement("div");
+        btnsDiv.setAttribute("class", "flex-row gap-1");
+
+        btnsDiv.appendChild(alterar);
+        btnsDiv.appendChild(remover);
+        li.appendChild(label);
+        li.appendChild(btnsDiv);
+        ul.appendChild(li);
+    });
 };
 
-$("#btn").click(adicionarTarefa);
+btn.addEventListener("click", adicionarTarefa);
 
-//Permite adicionar a tarefa também caso seja apertado o enter
-$("#tarefa").keypress(function (event) {
- if (event.key === "Enter") $("#btn").click();
+input.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") document.getElementById("btn").click();
 });
 
-$("#filtro-nome").on("input", atualizaLista);
+filtroNome.addEventListener("input", atualizaLista);
 
-$("#todas, #completas, #incompletas").change(atualizaLista);
+todasRadio.addEventListener("change", atualizaLista);
 
-limpar.click(limparTarefas);
+completas.addEventListener("change", atualizaLista);
+
+incompletas.addEventListener("change", atualizaLista);
 
 atualizaLista();
