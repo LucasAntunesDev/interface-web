@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #252525;
+    /* color:whitesmoke; */
+}
+
+.container {
+    background: crimson;
+    min-height: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    /* align-items: center; */
+    /* justify-content: center; */
+
+}
+
+.item {
+    background: gold;
+    order: 1;
+    flex-shrink: 1;
+}
+
+.diferente {
+    order: 2;
+    flex-shrink: 2;
+}
