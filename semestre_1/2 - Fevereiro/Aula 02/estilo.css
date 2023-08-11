@@ -1,0 +1,93 @@
+:root {
+    --sky100: #e0f2fe;
+    --sky200: #a5f3fc;
+    --slate700: #334155;
+    --slate800: #1e293b;
+    --slate900: #111827;
+    --sky500: #0ea5e9;
+    --violet400:#a78bfa;
+    --violet500:#6366f1;
+    --violet700:#6d28d9;
+    --neutral900:#171717;
+    --stone800:#292524;
+    --blue900: #1e3a8a; 
+    --sky900: #0c4a6e;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: var(--slate900);
+    background: linear-gradient(to right, var(--slate800), var(--slate900)) ;
+    color: white;
+    font-family: monospace;
+    font-size: large;
+    height: 100vh;
+    width: 100vh;
+    margin: auto;
+}
+
+#container {
+    height: 100vh;
+    width: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1.5rem;
+    background: var(--blue900);
+    background: linear-gradient(to right, var(--blue900), var(--sky900)) ;
+    width: 20rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    align-items: center;
+    margin: auto;
+    box-shadow: 0 10px 15px -3px var(--slate900, 0.1), 0 4px 6px -4px var(--slate900, 0.1);
+}
+
+.card-title:hover {
+    box-shadow: 0 20px 25px -5px var(--slate900, 0.1), 0 8px 10px -6px var(--slate900, 0.1);
+    cursor: pointer;
+}
+
+.card-img {
+    background-image: url(https://w0.peakpx.com/wallpaper/230/119/HD-wallpaper-the-trooper-eddie-iron-maiden.jpg);
+    background-size: cover;
+    border-radius: 100%;
+    width: 3.5rem;
+    height: 3.5rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+#img {
+    border-radius: 100%;
+    width: 3.5rem;
+    height: 3.7rem;
+}
+
+.title-group {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: bold;
+    color: var(--sky200);
+}
+
+.subtitle{
+    font-style: italic;
+}
