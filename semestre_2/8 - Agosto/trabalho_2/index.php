@@ -61,17 +61,17 @@ antialiased bx-border">
             <div class="flex flex-col justify-center items-center gap-y-4">
                 <label for="" class="text-neutral-900 flex flex-col outline-none w-[30rem]">
                     Nome
-                    <input type="text" class="border-b border-neutral-900 placeholder-neutral-900">
+                    <input type="text" class="border-b border-neutral-900 outline-none">
                 </label>
 
                 <label for="" class="text-neutral-900 flex flex-col outline-none w-[30rem]">
                     Telefone
-                    <input type="text" class="border-b border-neutral-900">
+                    <input type="text" class="border-b border-neutral-900 outline-none">
                 </label>
 
                 <label for="" class="text-neutral-900 flex flex-col outline-none w-[30rem]">
                     E-mail
-                    <input type="text" class="border-b border-neutral-900">
+                    <input type="text" class="border-b border-neutral-900 outline-none">
                 </label>
 
                 <button class="bg-neutral-900 py-2 px-16 rounded-sm text-zinc-50 mt-8
