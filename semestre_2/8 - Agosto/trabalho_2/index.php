@@ -15,7 +15,7 @@
 antialiased bx-border">
 
     <?php include_once('header.php') ?>
-    <div class="bg-[url(https://scontent.fcxj12-1.fna.fbcdn.net/v/t39.30808-6/339314552_877304493364712_1494246506581067132_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=IxWOWv5C51AAX-NHV9p&_nc_ht=scontent.fcxj12-1.fna&oh=00_AfA3uZN1S-QhGMti53nj1gP_Sxzn7CLbrtsaWfj0d7VXtA&oe=64E58FCF)]
+    <div class="bg-[url(assets/banner.png)]
     bg-contain">
 
 

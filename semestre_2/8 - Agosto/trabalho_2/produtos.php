@@ -26,7 +26,7 @@ antialiased bx-border">
 
             <div class="px-6 py-4">
                 <h3 class="font-bold text-xl mb-2 text-zinc-50 text-center">
-                    <a href="produto.php" class="hover-effect">
+                    <a href="produto.php" class="hover-effect effect-white">
                         Cozinhas
                     </a>
                 </h3>
@@ -41,7 +41,7 @@ antialiased bx-border">
 
             <div class="px-6 py-4">
                 <h3 class="font-bold text-xl mb-2 text-zinc-50 text-center">
-                    <a href="produto.php" class="hover-effect">
+                    <a href="produto.php" class="hover-effect effect-white">
                         Sala de Jantar
                     </a>
                 </h3>
@@ -56,7 +56,7 @@ antialiased bx-border">
 
             <div class="px-6 py-4">
                 <h3 class="font-bold text-xl mb-2 text-zinc-50 text-center">
-                    <a href="produto.php" class="hover-effect">
+                    <a href="produto.php" class="hover-effect effect-white">
                         Sala de Estar
                     </a>
                 </h3>
@@ -71,7 +71,7 @@ antialiased bx-border">
 
             <div class="px-6 py-4">
                 <h3 class="font-bold text-xl mb-2 text-zinc-50 text-center">
-                    <a href="produto.php" class="hover-effect">
+                    <a href="produto.php" class="hover-effect effect-white">
                         Dormitórios
                     </a>
                 </h3>
@@ -86,7 +86,7 @@ antialiased bx-border">
 
             <div class="px-6 py-4">
                 <h3 class="font-bold text-xl mb-2 text-zinc-50 text-center">
-                    <a href="produto.php" class="hover-effect">
+                    <a href="produto.php" class="hover-effect effect-white">
                         Banheiros
                     </a>
                 </h3>
@@ -101,7 +101,7 @@ antialiased bx-border">
 
             <div class="px-6 py-4">
                 <h3 class="font-bold text-xl mb-2 text-zinc-50 text-center">
-                    <a href="produto.php" class="hover-effect">
+                    <a href="produto.php" class="hover-effect effect-white">
                         Hall de Entreada
                     </a>
                 </h3>
@@ -116,7 +116,7 @@ antialiased bx-border">
 
             <div class="px-6 py-4">
                 <h3 class="font-bold text-xl mb-2 text-zinc-50 text-center">
-                    <a href="produto.php" class="hover-effect">
+                    <a href="produto.php" class="hover-effect effect-white">
                         Área Gourmet
                     </a>
                 </h3>
@@ -131,7 +131,7 @@ antialiased bx-border">
 
             <div class="px-6 py-4">
                 <h3 class="font-bold text-xl mb-2 text-zinc-50 text-center">
-                    <a href="produto.php" class="hover-effect">
+                    <a href="produto.php" class="hover-effect effect-white">
                         Home Office
                     </a>
                 </h3>
@@ -146,7 +146,7 @@ antialiased bx-border">
 
             <div class="px-6 py-4">
                 <h3 class="font-bold text-xl mb-2 text-zinc-50 text-center">
-                    <a href="produto.php" class="hover-effect">
+                    <a href="produto.php" class="hover-effect effect-white">
                         Ambientes Profissionais
                     </a>
                 </h3>

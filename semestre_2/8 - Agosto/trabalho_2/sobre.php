@@ -16,7 +16,7 @@ antialiased bx-border">
 
     <?php include_once('header.php') ?>
 
-    <section class="flex justify-center items-center pt-8 text-neutral-900">
+    <section class="flex justify-center items-center pt-8 text-neutral-900 h-[82.7vh]">
 
         <div class="grid grid-cols-3 justify-center">
             <img src="assets/exemplo_1.png" alt="" class="h-64">
