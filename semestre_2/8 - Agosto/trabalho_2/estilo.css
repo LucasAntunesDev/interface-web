@@ -1,0 +1,74 @@
+body {
+    scroll-behavior: smooth;
+}
+
+header {
+    width: -webkit-fill-available;
+}
+
+a.hover-effect {
+  background-image: linear-gradient(
+    to right,
+    #fca5a5,
+    #fca5a5 50%,
+    white 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+a.hover-effect:before {
+  content: '';
+  background: #fca5a5;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+a.hover-effect:hover {
+ background-position: 0;
+}
+a.hover-effect:hover::before{
+  width: 100%;
+}
+
+/* body {
+  display: block;
+  width: 10em;
+  overflow: auto;
+  height: 2em;
+} */
+
+body::-webkit-scrollbar {
+  display: block;
+}
+
+/* Demonstrate a "mostly customized" scrollbar
+ * (won't be visible otherwise if width/height is specified) */
+body::-webkit-scrollbar {
+  /* width: 9px; */
+  /* height: 8px; */
+  /* padding-inline: 4px; */
+}
+
+/* Add a thumb */
+body::-webkit-scrollbar-thumb {
+    background: #57111a;
+    /* border-radius: 100px; */
+    /* width: 4px; */
+}
+
+
+body::-webkit-scrollbar-thumb:hover {
+    background:#57111ae1 ;
+    cursor: pointer;
+}
