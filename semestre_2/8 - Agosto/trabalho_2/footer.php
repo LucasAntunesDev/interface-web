@@ -1,6 +1,6 @@
-<header class="flex justify-between items-center gap-x-8 px-8 h-16
+<footer class="flex justify-between items-center gap-x-8 px-8 h-16
     text-zinc-50 grow z-20 treansition duration-300 ease-in-out
-    bg-red-800 border-t-red-600 border-t-[3px] shadow-md mt-8">
+    bg-red-800 shadow-md mt-8">
 
     <span>ACL Móveis Sob Medida LTDA.</span>
     
@@ -8,4 +8,4 @@
 
    <span>(54) 3464-7111 ou (54) 99610-8684</span>
 
-</header>
+</footer>
