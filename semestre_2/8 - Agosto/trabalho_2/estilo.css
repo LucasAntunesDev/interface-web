@@ -9,9 +9,9 @@ header {
 a.hover-effect {
   background-image: linear-gradient(
     to right,
-    #fca5a5,
-    #fca5a5 50%,
-    white 50%
+    #57111a,
+    #57111a 50%,
+    #171717 50%
   );
   background-size: 200% 100%;
   background-position: -100%;
@@ -25,7 +25,7 @@ a.hover-effect {
 
 a.hover-effect:before {
   content: '';
-  background: #fca5a5;
+  background: #57111a;
   display: block;
   position: absolute;
   bottom: -3px;
