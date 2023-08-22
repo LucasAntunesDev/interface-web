@@ -11,7 +11,7 @@ a.hover-effect {
     to right,
     #57111a,
     #57111a 50%,
-    #171717 50%
+    currentColor 50%
   );
   background-size: 200% 100%;
   background-position: -100%;
