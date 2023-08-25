@@ -16,7 +16,6 @@
         </span>
 
         <span class="align-baseline">
-            <!-- <a href="produtos.php">Produtos</a> -->
             <a href="produtos.php" class="hover-effect">Produtos</a>
         </span>
 

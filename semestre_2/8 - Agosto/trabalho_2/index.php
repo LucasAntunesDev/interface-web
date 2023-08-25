@@ -81,7 +81,7 @@ antialiased bx-border">
             </div>
 
             <textarea cols="40" rows="10" class="border-neutral-900 border-solid  border-[1px] pr-8
-            placeholder:text-center" maxlength="10" minlength="10" placeholder="Digite a sua mensagem"></textarea>
+            placeholder:text-center resize-none" placeholder="Digite a sua mensagem"></textarea>
 
         </form>
 

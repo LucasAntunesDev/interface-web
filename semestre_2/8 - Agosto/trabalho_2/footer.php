@@ -18,7 +18,7 @@
 
         <div class="gap-x-2">
             <span class="fa-solid fa-envelope"></span>
-            <span>acl@clmoveis.con.br</span>
+            <span>acl@aclmoveis.com.br</span>
         </div>
 
         <div class="gap-x-2">

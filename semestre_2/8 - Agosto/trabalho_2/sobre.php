@@ -19,9 +19,9 @@ antialiased bx-border">
     <section class="flex justify-center items-center pt-8 text-neutral-900 h-[82.7vh]">
 
         <div class="grid grid-cols-3 justify-center">
-            <img src="assets/exemplo_1.png" alt="" class="h-80">
-            <img src="assets/exemplo_2.png" alt="" class="h-80">
-            <img src="assets/exemplo_3.png" alt="" class="h-80">
+            <img src="assets/exemplo_1.png" class="h-80">
+            <img src="assets/exemplo_2.png" class="h-80">
+            <img src="assets/exemplo_3.png" class="h-80">
 
         </div>
 

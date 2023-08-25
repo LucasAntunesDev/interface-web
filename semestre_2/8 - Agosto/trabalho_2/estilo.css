@@ -73,7 +73,6 @@ body {
   scrollbar-color: #57111a #ffffff;
 }
 
-/* Chrome, Edge, and Safari */
 ::-webkit-scrollbar {
   width: 16px;
 }
