@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html class="scroll-smooth hover:scroll-auto">
 <html lang="pt-BR">
 
 <head>
