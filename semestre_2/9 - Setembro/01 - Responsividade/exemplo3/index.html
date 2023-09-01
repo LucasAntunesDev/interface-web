@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Exemplo Tag Picture</title>
+    <style>
+        picture source,
+        picture img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <picture>
+        <source media="(min-width: 1000px)"
+            srcset="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/24339c14f74248a7a356afb0017c8c7f_9366/Camisa_1_SC_Internacional_23-24_Vermelho_HT7309_01_laydown.jpg">
+        <source media="(min-width: 600px)"
+            srcset="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/bcbbbf8929f948858028afd400320890_9366/Camisa_Treino_Internacional_Tiro_23_Laranja_IB4997_01_laydown.jpg">
+        <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1c8f7bd609eb45eb8f56d18578e96fb6_9366/Camisa_2_Internacional_23-24_Branco_HS5334_01_laydown.jpg"
+            alt="Camisa Home 23/24 do Intrnacional">
+    </picture>
+</body>
+
+</html>
