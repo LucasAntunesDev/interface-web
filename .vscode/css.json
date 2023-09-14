@@ -2,13 +2,13 @@
 	"flex col":{
 		"prefix" : "flex-col",
 		"body": [
-			"display:flex;\nflex-direction-column;\njustify-content-center;\naslign-items-center;"
+			"display:flex;\nflex-direction:column;\njustify-content:center;\naslign-items:center;"
 		]
 	},
 	"flex row":{
 		"prefix" : "flex-row",
 		"body": [
-			"display:flex;\nflex-direction-row;\njustify-content-center;\naslign-items-center;"
+			"display:flex;\nflex-direction:row;\njustify-content:center;\naslign-items-:center;"
 		]
 	},
 }
