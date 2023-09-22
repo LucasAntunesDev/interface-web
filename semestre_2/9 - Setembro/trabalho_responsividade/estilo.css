@@ -1,0 +1,124 @@
+:root{
+    --vermelho : #B61918;
+    --amarelo : #F7B500;
+    --branco-escuro: #F8F8F8;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background: var(--vermelho);
+    height: 5rem;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    padding-inline: 1rem;
+    align-items:center;
+}
+
+div#logo-div>img{
+    height: 4rem;
+}
+
+#hamburger{
+    color: var(--branco-escuro);
+    font-size: xx-large;
+}
+
+#banner>img{
+    /* height: 10rem; */
+    width: 100%;
+}
+
+h2{
+    font-size: xx-large;
+    font-family: 'Soccer League', sans-serif;
+}
+
+main,container>h2{
+    color: var(--vermelho);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    background: var(--vermelho);
+    color: var(--branco-escuro);
+    width: 90%;
+    border-radius: 0.2rem;
+    padding-bottom: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* .img-card-container{
+    width: inherit;
+} */
+
+.img-card-container>img{
+    width: 100%;
+}
+
+.infos-textos-card-container{
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+    row-gap: 1rem;
+}
+
+.titulo-card-container{
+    display: block;
+    color: var(--amarelo);
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.tags-card-container{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+
+.tag{
+    background: var(--amarelo);
+    border-radius: 1rem;
+    padding-inline: 1rem;
+    color: var(--branco-escuro);
+    vertical-align: baseline;
+}
+
+.infos-publicacao-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.hora-publicacao, .comentarios{
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+}
+
+.hora-publicacao>span{
+    display: flex;
+    flex-direction: row;
+    color: var(--branco-escuro);
+}
+
+.cards-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items:center ;
+    row-gap: 1rem;
+}
