@@ -167,7 +167,10 @@ h2 {
     z-index: 4;
     background: #252525;
     backdrop-filter: blur(2px);
-    height: 100vh;
+    /* height: 100vh; */
+    transition: display 2s ease-in-out;
+    /* overflow-y: auto; */
+    padding-block: 2rem;
     width: 100%;
     /* display: flex; */
     display: none;
