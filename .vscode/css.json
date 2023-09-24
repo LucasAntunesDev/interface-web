@@ -10,5 +10,5 @@
 		"body": [
 			"display:flex;\nflex-direction:row;\njustify-content:center;\naslign-items-:center;"
 		]
-	},
+	}
 }
