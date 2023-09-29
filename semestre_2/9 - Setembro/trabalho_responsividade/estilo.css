@@ -25,7 +25,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-inline: 1rem;
+    padding-inline: 2rem;
     align-items: center;
     box-shadow: var(--sombra-vermelho);
 }
@@ -437,6 +437,77 @@ a {
 
 .escudo {
     max-height: 4rem;
+}
+
+.post-pre-imagem{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    /* align-items:center; */
+    width: 100%;
+}
+
+.titulo-post{
+    display: block;
+    text-align: start;
+    color: var(--vermelho);
+    padding-left: 2rem;
+    margin-block: 0.5rem;
+}
+
+.informacoes-publicacao{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-bottom: 1rem;
+}
+
+.informacoes-publicacao span{
+    display: block;
+}
+
+.post-img{
+    max-width: 80%;
+    border-radius:0.5rem ;
+}
+
+.post-text{
+    /* max-width: 80%; */
+    word-wrap: break-word;
+    margin-block:2rem;
+}
+
+.post-recomendado{
+    border-radius: 0.4rem;
+    display: flex;
+    max-height: 5rem;
+    box-shadow: var(--sombra-vermelho);
+}
+
+.infos-post-recomendado{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.img-post-recomendado{
+    max-width:8rem;
+    border-radius: 0.4rem;
+}
+
+.comentarios-container{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    border: var(--borda) 2px solid;
+    width: 90%;
+    padding: 0.5rem;
+    padding-left: 2rem;
+    border-radius: 0.5rem;
+    margin-block: 1rem;
+    /* max-width: 80%; */
 }
 
 @media (min-width: 600px) {
