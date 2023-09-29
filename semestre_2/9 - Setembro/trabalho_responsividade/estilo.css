@@ -19,7 +19,7 @@ a {
  font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
+#main-header {
  background: var(--vermelho);
  height: 5rem;
  display: flex;
@@ -27,6 +27,7 @@ header {
  justify-content: space-between;
  padding-inline: 1rem;
  align-items: center;
+ box-shadow: var(--sombra-vermelho);
 }
 
 div#logo-div > img {
@@ -287,7 +288,7 @@ a {
  display: none;
 }
 
-header svg {
+#main-header svg {
  fill: var(--branco-escuro);
 }
 
@@ -311,12 +312,15 @@ header svg {
 #container-secundario {
  display: flex;
  flex-direction: row;
- align-items: center;
+ /* align-items: center; */
  justify-content: center;
 }
 
 #proximos-jogos {
  display: none;
+ height: fit-content;
+ box-shadow: var(--sombra-vermelho);
+ border-radius: 0.4rem;
 }
 
 #proximos-jogos-header {
@@ -340,6 +344,10 @@ header svg {
     border-bottom: var(--borda) 2px solid;
 }
 
+.last{
+    border:none;
+}
+
 .jogo-finalizado {
     background: var(--vermelho);
     color: var(--branco-escuro);
@@ -349,12 +357,22 @@ header svg {
     text-transform: uppercase;
     max-width: min-content;
     font-size: x-small;
+    margin-top: 0.4rem;
+}
+
+.competicao-logo{
+    max-height:1.4rem;
+}
+.competicao{
+    display: flex;
+    align-items: center;
+    column-gap: 0.2rem;
 }
 
 .jogo-header{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background: none;
     font-weight: bold;
@@ -362,6 +380,7 @@ header svg {
     column-gap: 2rem;
     font-size: smaller;
     height: min-content;
+    margin-top: 0.5rem;
 }
 
 .jogo-infos{
@@ -382,15 +401,9 @@ header svg {
 .jogo-times{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-}
-
-.jogo-times{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    padding-bottom: 1rem;
     column-gap: 2rem;
     flex-wrap: nowrap;
 }
