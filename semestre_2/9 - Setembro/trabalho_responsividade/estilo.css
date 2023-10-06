@@ -1,10 +1,10 @@
 :root {
     --vermelho: #b61918;
+    --vermelho-claro: crimson;
     --amarelo: #f7b500;
     --branco-escuro: #f8f8f8;
     --preto: #252525;
-    --sombra-vermelho: 0 10px 15px -3px rgb(182, 25, 24, 0.2),
-        0 4px 6px -4px rgb(182, 25, 24, 0.2);
+    --sombra: 0 10px 15px -3px rgb(0,0,0, 0.1), 0 4px 6px -4px rgb(0,0,0, 0.1);
     --borda: #E4E4E4;
 }
 
@@ -27,7 +27,8 @@ a {
     justify-content: space-between;
     padding-inline: 2rem;
     align-items: center;
-    box-shadow: var(--sombra-vermelho);
+    box-shadow: var(--sombra);
+    border-bottom: solid 3px crimson;
 }
 
 div#logo-div>a>img {
@@ -84,10 +85,16 @@ h2 {
     width: 90%;
     border-radius: 0.4rem;
     padding-bottom: 1rem;
+    background: none;
     /* height: auto; */
-    /* box-shadow: var(--sombra-vermelho); */
-    box-shadow: 0 10px 15px -3px rgb(182, 25, 24, 0.2),
-        0 4px 6px -4px rgb(182, 25, 24, 0.2);
+    /* box-shadow: var(--sombra); */
+    border: solid 1px var(--borda);
+}
+
+.card:hover, .jogo:hover, .post-recomendado:hover {
+    background: var(--branco-escuro);
+    transition: background ease-in-out 0.3s;
+    cursor: pointer;
 }
 
 /* .img-card-container{
@@ -138,17 +145,9 @@ h2 {
     width: fit-content;
 }
 
-.tag:hover {
-    background: none;
-    color: var(--vermelho);
-    border: solid 1px var(--vermelho);
-    cursor: pointer;
-}
-
 .infos-publicacao-container {
     display: flex;
     flex-direction: row;
-    /* justify-content: space-evenly; */
     column-gap: 1.5rem;
 }
 
@@ -158,6 +157,7 @@ h2 {
     flex-direction: row;
     align-items: center;
     column-gap: 0.5rem;
+    width: fit-content;
 }
 
 .hora-publicacao>span {
@@ -242,6 +242,12 @@ a {
     color: var(--vermelho);
 }
 
+.filtrar-container:hover *{
+    color: var(--vermelho-claro);
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
 .filtrar-container {
     display: flex;
     flex-direction: row;
@@ -250,9 +256,10 @@ a {
     column-gap: 0.4rem;
     color: var(--vermelho);
     font-weight: bold;
-    width: 100%;
+    width: fit-content;
     margin-right: 3rem;
     margin-top: 1rem;
+    align-self: flex-end;
 }
 
 .pagination {
@@ -270,17 +277,23 @@ a {
     align-items: center;
     justify-content: center;
     border-radius: 0.5rem;
-    width: 2rem;
-    height: 2rem;
+    width: 2.2rem;
+    height: 2.2rem;
     border: none;
-    box-shadow: var(--sombra-vermelho);
-    /* box-shadow: 0 10px 15px -3px rgb(182, 25, 24, 0.2), 0 4px 6px -4px rgb(182, 25, 24, 0.2); */
+    background: none;
+}
+
+.pagination-item:hover a{
+    color: var(--vermelho);
+    transition: color ease-in-out 0.3s;
+    cursor: pointer;
 }
 
 .pagination-item a {
     font-weight: bold;
-    color: var(--vermelho);
+    color: var(--preto);
     text-decoration: none;
+    font-size: larger;
 }
 
 .pagination-item:nth-child(2) a {
@@ -290,7 +303,6 @@ a {
 
 .pagination-item:nth-child(2) {
     background: var(--vermelho);
-    scale: 1.1;
 }
 
 .pagination-item:nth-child(n + 6):nth-child(-n + 9) {
@@ -306,7 +318,7 @@ a {
 }
 
 #main-header svg:hover {
-    transition: color 0.3s ease-in-out;
+    transition: fill 0.3s ease-in-out;
     cursor: pointer;
     fill: var(--amarelo);
 }
@@ -338,7 +350,7 @@ a {
 #proximos-jogos {
     display: none;
     height: fit-content;
-    box-shadow: var(--sombra-vermelho);
+    box-shadow: var(--sombra);
     border-radius: 0.4rem;
 }
 
@@ -475,7 +487,7 @@ a {
     border-radius: 0.4rem;
     display: flex;
     /* max-height: 5rem; */
-    box-shadow: var(--sombra-vermelho);
+    border: solid 1px var(--borda);
     align-items: center;
 }
 
@@ -498,18 +510,19 @@ a {
 .comentarios-container {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     column-gap: 0.5rem;
-    border: var(--borda) 2px solid;
     width: 15rem;
     padding: 0.5rem;
     padding-left: 2rem;
     border-radius: 0.5rem;
     margin-block: 1rem;
+    border: solid 1px var(--borda);
 }
 
-.comentarios-container span {
-    font-weight: bold;
+.comentarios-container:hover{
+    background: var(--branco-escuro);
+    transition: background 0.3s ease-in-out;
+    cursor: pointer
 }
 
 #comentarios-container-esquerda {
