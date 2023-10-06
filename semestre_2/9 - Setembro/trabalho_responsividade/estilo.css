@@ -366,22 +366,6 @@ a {
     border: none;
 }
 
-.jogo-finalizado {
-    background: var(--vermelho);
-    color: var(--branco-escuro);
-    font-weight: bold;
-    padding: 0.3rem;
-    border-radius: 0.2rem;
-    text-transform: uppercase;
-    max-width: min-content;
-    font-size: x-small;
-    margin-top: 0.4rem;
-}
-
-.competicao-logo {
-    max-height: 1.4rem;
-}
-
 .competicao {
     display: flex;
     align-items: center;
@@ -438,6 +422,11 @@ a {
 .escudo {
     max-height: 4rem;
 }
+
+.escudo.adversario{
+    max-height: 3rem;
+}
+
 
 .post-pre-imagem{
     display:flex;
