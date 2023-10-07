@@ -117,7 +117,6 @@ h2 {
     padding-inline: 1rem;
     row-gap: 0.5rem;
     justify-content: center;
-    font-weight: bold;
     font-size: small;
 }
 
@@ -127,6 +126,10 @@ h2 {
     font-weight: bold;
     font-size: x-large;
     margin-top: 0.5rem;
+}
+
+.texto-card-container{
+    font-weight: initial;
 }
 
 .tags-card-container {
